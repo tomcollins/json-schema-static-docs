@@ -1,0 +1,42 @@
+{
+  "$id": "name",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Name",
+  "description": "A name.",
+  "type": "object",
+  "properties": {
+      "firstNames": {
+          "$ref": "#/definitions/firstNames"
+      },
+      "surname": {
+          "$ref": "#/definitions/surname"
+      }
+  },
+  "additionalProperties": false,
+  "required": [
+      "firstNames",
+      "surname"
+  ],
+  "definitions": {
+      "firstNames": {
+          "description": "One or more first names separated by a space character.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "[A-Za-z ]{1,100}"
+      },
+      "surname": {
+          "description": "A single surname.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "[A-Za-z]{1,100}"
+      }
+  },
+  "examples": [
+      {
+          "firstNames": "Thomas John",
+          "surname": "Collins"
+      }
+  ]
+}

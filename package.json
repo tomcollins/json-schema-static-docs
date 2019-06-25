@@ -1,0 +1,29 @@
+{
+  "name": "json-schema-static-docs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/json-schema-static-docs.js",
+  "bin": {
+    "json-schema-static-docs": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "extend": "^3.0.2",
+    "fast-glob": "^3.0.2",
+    "handlebars": "^4.1.2",
+    "json-pointer": "^0.6.0",
+    "json-schema-ref-parser": "^7.1.0",
+    "load-json-file": "^6.1.0",
+    "lodash": "^4.17.11",
+    "optimist": "^0.6.1",
+    "readdirp": "^2.2.1",
+    "rimraf": "^2.6.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
