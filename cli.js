@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+const fs = require('fs');
 const path = require('path');
 const JsonSchemaStaticDocs = require('./lib/json-schema-static-docs');
 
@@ -18,10 +19,12 @@ var argv = require('optimist')
   })
   .argv;
 
-let jsonSchemaStaticDocs = JsonSchemaStaticDocs({
-  inputPath: argv.i,
-  outputPath: argv.o
-});
-await jsonSchemaStaticDocs.generate();
+( async () => {
+  let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
+    inputPath: argv.i,
+    outputPath: argv.o
+  });
+  await jsonSchemaStaticDocs.generate();
+  console.log('Documents generated into ' + argv.o);
+})();
 
-console.log('Documents generated into ' + argv.o);
