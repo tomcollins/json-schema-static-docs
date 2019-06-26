@@ -34,12 +34,19 @@
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
+    "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
+    "husky": "^2.4.1",
     "jest": "^24.8.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
     }
   }
 }
