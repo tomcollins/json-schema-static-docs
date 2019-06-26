@@ -25,8 +25,8 @@
           "maxLength": 100,
           "pattern": "[A-Za-z ]{1,100}"
       },
-      "surname": {
-          "description": "A single surname.",
+      "lastName": {
+          "description": "A single last name.",
           "type": "string",
           "minLength": 1,
           "maxLength": 100,
