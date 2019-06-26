@@ -21,7 +21,7 @@ let resolvedSchemas = [
   }
 ];
 
-test('merges schemas', async () => {
+test('merges schemas', () => {
   const results = Merger.mergeSchemas(unresolvedSchemas, resolvedSchemas);
   expect(results).toHaveLength(2);
   expect(results[0].filename).toBe('schema/file1.json');
