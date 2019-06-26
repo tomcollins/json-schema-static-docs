@@ -9,6 +9,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomcollins/json-schema-static-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomcollins/json-schema-static-docs/issues"
+  },
+  "homepage": "https://github.com/tomcollins/json-schema-static-docs#readme",
+  "author": "Tom Collins",
+  "engines": {
+    "node": ">=8"
+  },
   "dependencies": {
     "extend": "^3.0.2",
     "fast-glob": "^3.0.2",
@@ -21,8 +33,6 @@
     "readdirp": "^2.2.1",
     "rimraf": "^2.6.3"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "jest": "^24.8.0"
   }
