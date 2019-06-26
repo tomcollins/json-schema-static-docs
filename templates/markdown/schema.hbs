@@ -4,15 +4,11 @@
 
 {{ schema.id }}
 
-{{#if examples}}
-## Examples
-
-{{#each examples}}
+{{#if example}}
+## Example
 ```
-{{{json this.schema}}}
+{{{json example.data}}}
 ```
-{{/each}}
-
 {{/if}}
 
 ## Attributes

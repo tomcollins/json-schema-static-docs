@@ -3,21 +3,21 @@ const Merger = require('../lib/merger.js');
 let unresolvedSchemas = [
   {
     filename: 'schema/file1.json',
-    schema: { $id: 1, name: '1 unresolved', properties: { property1: {$ref: '#/definitions/1' } } }
+    data: { $id: 1, name: '1 unresolved', properties: { property1: {$ref: '#/definitions/1' } } }
   },
   {
     filename: 'schema/file2.json',
-    schema: { $id: 2, name: '2 unresolved', properties: { property2: {$ref: '#/definitions/2' } } }
+    data: { $id: 2, name: '2 unresolved', properties: { property2: {$ref: '#/definitions/2' } } }
   }
 ];
 let resolvedSchemas = [
   {
     filename: 'schema/file2.json',
-    schema: { $id: 2, name: '2 resolved', properties: { property2: { name: 'property2' } } }
+    data: { $id: 2, name: '2 resolved', properties: { property2: { name: 'property2' } } }
   },
   {
     filename: 'schema/file1.json',
-    schema: { $id: 1, name: '1 resolved', properties: { property1: { name: 'property1' } } }
+    data: { $id: 1, name: '1 resolved', properties: { property1: { name: 'property1' } } }
   }
 ];
 
