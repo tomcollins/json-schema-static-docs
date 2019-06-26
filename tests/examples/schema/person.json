@@ -27,7 +27,7 @@
       {
           "name": {
               "firstNames": "Thomas John",
-              "surname": "Collins"
+              "lastName": "Collins"
           },
           "dateOfBirth": "1980-10-08"
       }

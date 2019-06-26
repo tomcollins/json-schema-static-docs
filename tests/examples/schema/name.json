@@ -8,14 +8,14 @@
       "firstNames": {
           "$ref": "#/definitions/firstNames"
       },
-      "surname": {
-          "$ref": "#/definitions/surname"
+      "lastName": {
+          "$ref": "#/definitions/lastName"
       }
   },
   "additionalProperties": false,
   "required": [
       "firstNames",
-      "surname"
+      "lastName"
   ],
   "definitions": {
       "firstNames": {
@@ -36,7 +36,7 @@
   "examples": [
       {
           "firstNames": "Thomas John",
-          "surname": "Collins"
+          "lastName": "Collins"
       }
   ]
 }
