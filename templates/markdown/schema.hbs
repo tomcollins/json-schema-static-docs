@@ -4,6 +4,17 @@
 
 {{ schema.id }}
 
+{{#if examples}}
+## Examples
+
+{{#each examples}}
+```
+{{{json this.schema}}}
+```
+{{/each}}
+
+{{/if}}
+
 ## Attributes
 
 | Name | Type |
