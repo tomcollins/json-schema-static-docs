@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const Merger = require('../lib/merger.js');
 
 let unresolvedSchemas = [
@@ -32,4 +33,23 @@ test('merges schemas', () => {
   expect(results[0].schema.properties.property1.$ref).toBe('#/definitions/1');
   expect(results[1].schema.properties.property2.name).toBe('property2');
   expect(results[1].schema.properties.property2.$ref).toBe('#/definitions/2');
+});
+
+test('handles schema with no properties', () => {
+  let unresolvedSchemasWithNoProperties = _.cloneDeep(unresolvedSchemas);
+  let resolvedSchemasWithNoProperties = _.cloneDeep(resolvedSchemas);
+
+  console.log('unresolvedSchemasWithNoProperties', unresolvedSchemasWithNoProperties);
+
+  delete unresolvedSchemasWithNoProperties[0].data.properties;
+  delete unresolvedSchemasWithNoProperties[1].data.properties;
+  delete resolvedSchemasWithNoProperties[0].data.properties;
+  delete resolvedSchemasWithNoProperties[1].data.properties;
+
+  const results = Merger.mergeSchemas(unresolvedSchemasWithNoProperties, resolvedSchemasWithNoProperties);
+  expect(results).toHaveLength(2);
+  expect(results[0].filename).toBe('schema/file1.json');
+  expect(results[0].schema.$id).toBe(1);
+  expect(results[1].filename).toBe('schema/file2.json');
+  expect(results[1].schema.$id).toBe(2);
 });
