@@ -14,11 +14,11 @@ let unresolvedSchemas = [
 let resolvedSchemas = [
   {
     filename: 'schema/file2.json',
-    data: { $id: 2, name: '2 resolved', properties: { property2: { name: 'property2' } } }
+    data: { $id: 2, name: '2 resolved', properties: { property2: { name: 'property2' } }, required: [] }
   },
   {
     filename: 'schema/file1.json',
-    data: { $id: 1, name: '1 resolved', properties: { property1: { name: 'property1' } } }
+    data: { $id: 1, name: '1 resolved', properties: { property1: { name: 'property1' } }, required: ['property1'] }
   }
 ];
 
@@ -35,11 +35,16 @@ test('merges schemas', () => {
   expect(results[1].schema.properties.property2.$ref).toBe('#/definitions/2');
 });
 
+test('sets isRequired on each schama property', () => {
+  const results = Merger.mergeSchemas(unresolvedSchemas, resolvedSchemas);
+  expect(results).toHaveLength(2);
+  expect(results[0].schema.properties.property1.isRequired).toBe(true);
+  expect(results[1].schema.properties.property2.isRequired).toBe(false);
+});
+
 test('handles schema with no properties', () => {
   let unresolvedSchemasWithNoProperties = _.cloneDeep(unresolvedSchemas);
   let resolvedSchemasWithNoProperties = _.cloneDeep(resolvedSchemas);
-
-  console.log('unresolvedSchemasWithNoProperties', unresolvedSchemasWithNoProperties);
 
   delete unresolvedSchemasWithNoProperties[0].data.properties;
   delete unresolvedSchemasWithNoProperties[1].data.properties;
