@@ -22,6 +22,14 @@ let defaultMergedSchema = {
         title: 'Property 2',
         type: 'integer',
         isRequired: false
+      },
+      property3: {
+        "type": "array",
+        "title": "Property 3",
+        "items": {
+            "title": "Property 3",
+            "$ref": "property3.json"
+        }
       }
     }
   }
@@ -50,12 +58,13 @@ test('renders attributes', async () => {
     + '| Name | Type | Required |\n'
     + '| --- | --- | --- |\n'
     + '| property1 | String | Yes |\n'
-    + '| property2 | Integer | No |\n';
+    + '| property2 | Integer | No |\n'
+    + '| property3 | Array [[Property3](./property3.html)] | No |\n';
 
   expect(result).toEqual(expect.stringContaining(expectedText));
 });
 
-test('renders string enums', async () => {
+test('renders string property enums', async () => {
   expect.assertions(1);
   rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
   await rendererMarkdown.setup();
@@ -64,6 +73,18 @@ test('renders string enums', async () => {
   let expectedText = '| Title | Property 1 |\n'
     + '| Type | String |\n'
     + '| Enum | foo, bar, 42, null |\n';
+
+  expect(result).toEqual(expect.stringContaining(expectedText));
+});
+
+test('renders array property types', async () => {
+  expect.assertions(1);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchema);
+
+  let expectedText = '| Title | Property 3 |\n'
+    + '| Type | Array [[Property3](./property3.html)] |\n';
 
   expect(result).toEqual(expect.stringContaining(expectedText));
 });

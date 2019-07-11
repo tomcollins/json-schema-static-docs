@@ -5,12 +5,20 @@
   "description": "A DVLA person.",
   "type": "object",
   "properties": {
-      "name": {
-          "$ref": "name.json"
-      },
-      "dateOfBirth": {
-          "$ref": "#/definitions/dateOfBirth"
-      }
+    "name": {
+        "$ref": "name.json"
+    },
+    "dateOfBirth": {
+        "$ref": "#/definitions/dateOfBirth"
+    },
+    "friendsNames": {
+        "type": "array",
+        "title": "Friends names",
+        "description": "Set if Tachograph history items.",
+        "items": {
+            "$ref": "name.json"
+        }
+    }
   },
   "additionalProperties": false,
   "required": [
