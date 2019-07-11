@@ -13,10 +13,10 @@
 
 ## Attributes
 
-| Name | Type | Required |
-| --- | --- | --- |
+| Name | Type |
+| --- | --- |
 {{#each schema.properties}}
-| {{ @key }} | {{jsonSchemaType this }} | {{#if this.isRequired}}Yes{{else}}No{{/if}} |
+| {{ @key }} | {{jsonSchemaType this }} |
 {{/each}}
 
 ---
@@ -32,11 +32,12 @@
 | Name | Value |
 | --- | --- |
 | Title | {{ this.title }} |
+| Required | {{#if this.isRequired}}Yes{{else}}No{{/if}} |
 | Type | {{jsonSchemaType this }} |
 {{#if this.enum}}| Enum | {{enumValues this.enum}} |{{/if}}
 {{#if this.minLength}}| Min Length | {{ this.minLength }} |{{/if}}
 {{#if this.maxLength}}| Max Length | {{ this.maxLength }} |{{/if}}
-{{#if this.format}}| Format | {{ this.format }} |{{/if~}}
-{{#if this.pattern}}| Pattern | {{ this.pattern }} |{{/if~}}
+{{#if this.format}}| Format | {{ this.format }} |{{/if}}
+{{#if this.pattern}}| Pattern | {{ this.pattern }} |{{/if}}
 
 {{/each}}

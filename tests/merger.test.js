@@ -4,11 +4,19 @@ const Merger = require('../lib/merger.js');
 let unresolvedSchemas = [
   {
     filename: 'schema/file1.json',
-    data: { $id: 1, name: '1 unresolved', properties: { property1: {$ref: '#/definitions/1' } } }
+    data: { 
+      $id: 1, name: '1 unresolved', 
+      properties: { property1: { $ref: '#/definitions/property1' } },
+      definitions: { property1: { $ref: "property1.json" } }
+    }
   },
   {
     filename: 'schema/file2.json',
-    data: { $id: 2, name: '2 unresolved', properties: { property2: {$ref: '#/definitions/2' } } }
+    data: { 
+      $id: 2, name: '2 unresolved', 
+      properties: { property2: { $ref: '#/definitions/property2' } },
+      definitions: { property2: { $ref: "property2.json" } }
+    }
   }
 ];
 let resolvedSchemas = [
@@ -30,9 +38,9 @@ test('merges schemas', () => {
   expect(results[1].filename).toBe('schema/file2.json');
   expect(results[1].schema.$id).toBe(2);
   expect(results[0].schema.properties.property1.name).toBe('property1');
-  expect(results[0].schema.properties.property1.$ref).toBe('#/definitions/1');
+  expect(results[0].schema.properties.property1.$ref).toBe('#/definitions/property1');
   expect(results[1].schema.properties.property2.name).toBe('property2');
-  expect(results[1].schema.properties.property2.$ref).toBe('#/definitions/2');
+  expect(results[1].schema.properties.property2.$ref).toBe('#/definitions/property2');
 });
 
 test('sets isRequired on each schama property', () => {
