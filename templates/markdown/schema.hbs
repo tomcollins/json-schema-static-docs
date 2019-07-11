@@ -33,6 +33,7 @@
 | --- | --- |
 | Title | {{ this.title }} |
 | Type | {{jsonSchemaType this }} |
+{{#if this.enum}}| Enum | {{enumValues this.enum}} |{{/if}}
 {{#if this.minLength}}| Min Length | {{ this.minLength }} |{{/if}}
 {{#if this.maxLength}}| Max Length | {{ this.maxLength }} |{{/if}}
 {{#if this.format}}| Format | {{ this.format }} |{{/if~}}

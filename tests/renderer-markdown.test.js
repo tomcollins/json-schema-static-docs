@@ -13,10 +13,13 @@ let defaultMergedSchema = {
     title: 'My Schema',
     properties: {
       property1: {
+        title: 'Property 1',
         type: 'string',
-        isRequired: true
+        isRequired: true,
+        enum: ["foo", "bar", 42, null]
       },
       property2: {
+        title: 'Property 2',
         type: 'integer',
         isRequired: false
       }
@@ -43,11 +46,24 @@ test('renders attributes', async () => {
   await rendererMarkdown.setup();
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
-  let attributesText = '## Attributes\n\n'
+  let expectedText = '## Attributes\n\n'
     + '| Name | Type | Required |\n'
     + '| --- | --- | --- |\n'
     + '| property1 | String | Yes |\n'
     + '| property2 | Integer | No |\n';
 
-  expect(result).toEqual(expect.stringContaining(attributesText));
+  expect(result).toEqual(expect.stringContaining(expectedText));
+});
+
+test('renders string enums', async () => {
+  expect.assertions(1);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchema);
+
+  let expectedText = '| Title | Property 1 |\n'
+    + '| Type | String |\n'
+    + '| Enum | foo, bar, 42, null |\n';
+
+  expect(result).toEqual(expect.stringContaining(expectedText));
 });
