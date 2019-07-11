@@ -14,7 +14,6 @@
   },
   "additionalProperties": false,
   "required": [
-      "firstNames",
       "lastName"
   ],
   "definitions": {

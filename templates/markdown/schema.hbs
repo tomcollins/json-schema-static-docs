@@ -13,10 +13,10 @@
 
 ## Attributes
 
-| Name | Type |
-| --- | --- |
+| Name | Type | Required |
+| --- | --- | --- |
 {{#each schema.properties}}
-| {{ @key }} | {{jsonSchemaType this }} |  
+| {{ @key }} | {{jsonSchemaType this }} | {{#if this.isRequired}}Yes{{else}}No{{/if}} |
 {{/each}}
 
 ---
