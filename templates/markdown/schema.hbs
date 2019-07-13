@@ -13,11 +13,7 @@
 
 ## Attributes
 
-| Name | Type |
-| --- | --- |
-{{#each schema.properties}}
-| {{ @key }} | {{jsonSchemaType this }} |
-{{/each}}
+{{attributesTable schema.properties }}
 
 ---
 
@@ -29,15 +25,23 @@
 
 ### Properties
 
-| Name | Value |
-| --- | --- |
-| Title | {{ this.title }} |
-| Required | {{#if this.isRequired}}Yes{{else}}No{{/if}} |
-| Type | {{jsonSchemaType this }} |
-{{#if this.enum}}| Enum | {{enumValues this.enum}} |{{/if}}
-{{#if this.minLength}}| Min Length | {{ this.minLength }} |{{/if}}
-{{#if this.maxLength}}| Max Length | {{ this.maxLength }} |{{/if}}
-{{#if this.format}}| Format | {{ this.format }} |{{/if}}
-{{#if this.pattern}}| Pattern | {{ this.pattern }} |{{/if}}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Title</td><td colspan="2">{{ this.title }}</td></tr>
+    <tr><td>Required</td><td colspan="2">{{#if this.isRequired}}Yes{{else}}No{{/if}}</td></tr>
+    {{propertyTypeRow this }}
+    {{#if this.enum}}<tr><td>Enum</td><td colspan="2">{{enumValues this.enum}}</td></tr>{{/if}}
+    {{#if this.minLength}}<tr><td>in Length</td><td colspan="2">{{enumValues this.minLength}}</td></tr>{{/if}}
+    {{#if this.maxLength}}<tr><td>Max Length</td><td colspan="2">{{enumValues this.maxLength}}</td></tr>{{/if}}
+    {{#if this.format}}<tr><td>Format</td><td colspan="2">{{enumValues this.format}}</td></tr>{{/if}}
+    {{#if this.pattern}}<tr><td>Pattern</td><td colspan="2">{{enumValues this.pattern}}</td></tr>{{/if}}
+  </tbody>
+</table>
 
 {{/each}}
