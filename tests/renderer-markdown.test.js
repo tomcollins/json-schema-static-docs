@@ -76,8 +76,9 @@ test('renders string property enums', async () => {
 
   let expectedText = ''
     + '    <tr><td>Title</td><td colspan=\"2\">Property 1</td></tr>\n'
-    + '    <tr><td>Required</td><td colspan=\"2\">Yes</td></tr>\n';
-    + '    <tr><td>Enum</td><td colspan=\"2\">foo, bar, 42, null</td></tr>';
+    + '    <tr><td>Required</td><td colspan=\"2\">Yes</td></tr>\n'
+    + '    <tr><td>Type</td><td colspan=\"2\">String</td></tr>\n'
+    + '    <tr><td>Enum</td><td colspan=\"2\"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
 
   expect(result).toEqual(expect.stringContaining(expectedText));
 });
