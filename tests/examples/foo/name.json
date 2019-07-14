@@ -1,3 +1,4 @@
 {
-  "foo": "name"
+  "firstNames": "First Names",
+  "lastName": "LastName"
 }
