@@ -19,7 +19,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  // rimraf.sync(testOptions.outputPath);
+  rimraf.sync(testOptions.outputPath);
 });
 
 test('resolves single schema', async () => {
