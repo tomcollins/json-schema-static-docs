@@ -19,7 +19,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  rimraf.sync(testOptions.outputPath);
+  // rimraf.sync(testOptions.outputPath);
 });
 
 test('resolves single schema', async () => {
@@ -40,7 +40,7 @@ test('loads single additional data source', async () => {
 });
 
 test('supports custom templates', async () => {
-  testOptions.templatePath = './tests/examples/templates';
+  testOptions.templatePath = path.join(__dirname, 'examples/templates/');
   const jsonSchameStaticDocs = new JsonSchameStaticDocs(testOptions);
   await jsonSchameStaticDocs.generate();
   let result = fs.readFileSync(path.join(testOptions.outputPath, 'name.md'));
