@@ -29,8 +29,8 @@
     "json-pointer": "^0.6.0",
     "json-schema-ref-parser": "^7.1.0",
     "lodash": ">=4.17.13",
-    "optimist": "^0.6.1",
-    "readdirp": "^2.2.1",
+    "make-dir": "^3.0.0",
+    "mkdirp": "^0.5.1",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
