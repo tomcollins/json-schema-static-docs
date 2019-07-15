@@ -1,8 +1,12 @@
-# {{ schema.title }}
+{{#if schema.title}}# {{ schema.title }}{{/if}}
 
-{{ schema.description }}
+{{#if schema.description}}<p>{{ schema.description }}</p>{{/if}}
+{{#if schema.id}}<p>{{ schema.id }}</p>{{/if}}
 
-{{ schema.id }}
+
+## Attributes
+
+{{attributesTable schema }}
 
 {{#if example}}
 ## Example
@@ -11,24 +15,36 @@
 ```
 {{/if}}
 
-## Attributes
-
-{{attributesTable schema.properties }}
-
----
+<hr/>
 
 {{#each schema.properties}}
 
+{{> property depth=1}}
+
+{{/each}}
+
+{{#*inline "property"}}
+
 ## {{ @key }}
 
-{{ this.description }}
+{{#if this.description}}<p>{{ this.description }}</p>{{/if}}
 
-### Properties
+{{> propertyTable}}
 
+{{#if this.properties}}
+  <div class="jssd-properties-nested"> 
+  {{#each this.properties}}  
+      {{> property depth=2}}
+  {{/each}}
+  </div>
+{{/if}}
+{{/inline}}
+
+{{#*inline "propertyTable"}}
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Property</th>
       <th colspan="2">Value</th>
     </tr>
   </thead>
@@ -43,5 +59,4 @@
     {{#if this.pattern}}<tr><td>Pattern</td><td colspan="2">{{this.pattern}}</td></tr>{{/if}}
   </tbody>
 </table>
-
-{{/each}}
+{{/inline}}

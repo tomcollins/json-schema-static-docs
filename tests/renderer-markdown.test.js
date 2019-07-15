@@ -5,7 +5,7 @@ const _ = require('lodash')
 
 const RendererMarkdown = require('../lib/renderer-markdown.js');
 
-let defaultTemplatePath = path.join(__dirname, '../templates/markdown');
+let defaultTemplatePath = path.join(__dirname, '../templates');
 let rendererMarkdown;
 
 let defaultMergedSchema = {
@@ -57,7 +57,7 @@ test('renders attributes', async () => {
   result = result.match(/## Attributes(.*\n)*/)[0];
 
   let expectedText = '## Attributes\n\n'
-    + '<table><thead><tr><th>Name</th><th colspan=\"2\">Type</th></tr></thead>'
+    + '<table><thead><tr><th colspan=\"2\">Name</th><th>Type</th></tr></thead>'
     + '<tr><td colspan=\"2\">property1</td><td>String</td></tr>'
     + '<tr><td colspan=\"2\">property2</td><td>Integer</td></tr>'
     + '<tr><td colspan=\"2\">property3</td><td>Array [<a href=\"./property3.html\">Property3</a>]</td></tr>'
