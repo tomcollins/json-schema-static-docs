@@ -19,24 +19,25 @@
 
 {{#each schema.properties}}
 
-{{> property depth=1}}
+## {{ @key }}
+
+{{> property }}
 
 {{/each}}
 
 {{#*inline "property"}}
-
-## {{ @key }}
 
 {{#if this.description}}<p>{{ this.description }}</p>{{/if}}
 
 {{> propertyTable}}
 
 {{#if this.properties}}
-  <div class="jssd-properties-nested"> 
-  {{#each this.properties}}  
-      {{> property depth=2}}
-  {{/each}}
-  </div>
+
+{{#each this.properties}}  
+### {{ @key }}
+{{> property }}
+{{/each}}
+
 {{/if}}
 {{/inline}}
 
