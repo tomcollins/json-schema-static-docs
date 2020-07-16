@@ -27,14 +27,13 @@
     "ajv": "^6.10.1",
     "extend": "^3.0.2",
     "fast-glob": "^3.0.2",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.6.0",
     "json-pointer": "^0.6.0",
     "json-schema-ref-parser": "^7.1.0",
     "lodash": ">=4.17.13",
     "make-dir": "^3.0.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.3",
-    "snyk": "^1.316.1"
+    "mkdirp": "^1.0.0",
+    "rimraf": "^2.6.3"
   },
   "devDependencies": {
     "commitizen": "^4.0.3",
