@@ -30,7 +30,7 @@
     "json-schema-ref-parser": "^7.1.0",
     "lodash": ">=4.17.13",
     "make-dir": "^3.0.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.0",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
