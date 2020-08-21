@@ -1,0 +1,41 @@
+{
+  "$id": "person",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "description": "A DVLA person.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "$ref": "../name.json"
+    },
+    "dateOfBirth": {
+      "$ref": "#/definitions/dateOfBirth"
+    },
+    "friendsNames": {
+      "type": "array",
+      "title": "Friends names",
+      "description": "Set if Tachograph history items.",
+      "items": {
+        "$ref": "../name.json"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name"],
+  "definitions": {
+    "dateOfBirth": {
+      "description": "The date on which a person was born. Does not include time.",
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "examples": [
+    {
+      "name": {
+        "firstNames": "Thomas John",
+        "lastName": "Collins"
+      },
+      "dateOfBirth": "1980-10-08"
+    }
+  ]
+}
