@@ -22,7 +22,7 @@
     "node": ">=8"
   },
   "dependencies": {
-    "ajv": "^6.10.1",
+    "ajv": "^6.12.3",
     "extend": "^3.0.2",
     "fast-glob": "^3.0.2",
     "handlebars": "^4.6.0",
