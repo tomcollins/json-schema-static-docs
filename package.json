@@ -7,7 +7,9 @@
     "json-schema-static-docs": "./cli.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -48,5 +50,6 @@
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
     }
-  }
+  },
+  "snyk": true
 }
