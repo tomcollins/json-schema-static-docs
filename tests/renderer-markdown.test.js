@@ -36,6 +36,10 @@ let defaultMergedSchema = {
 };
 let mergedSchema = {};
 
+const removeFormatting = value => {
+  return value.replace(/\n/g, '').replace(/ +</g, '<');
+}
+
 beforeEach(() => {
   mergedSchema = _.cloneDeep(defaultMergedSchema);
 });
@@ -73,12 +77,13 @@ test('renders string property enums', async () => {
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
   result = result.match(/## property1(.*\n)*/)[0];
+  result = removeFormatting(result);
 
   let expectedText = ''
-    + '    <tr><td>Title</td><td colspan=\"2\">Property 1</td></tr>\n'
-    + '    <tr><td>Required</td><td colspan=\"2\">Yes</td></tr>\n'
-    + '    <tr><td>Type</td><td colspan=\"2\">String</td></tr>\n'
-    + '    <tr><td>Enum</td><td colspan=\"2\"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
+    + '<tr><td>Title</td><td colspan=\"2\">Property 1</td></tr>';
+    + '<tr><td>Required</td><td colspan=\"2\">Yes</td></tr>'
+    + '<tr><td>Type</td><td colspan=\"2\">String</td></tr>'
+    + '<tr><td>Enum</td><td colspan=\"2\"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
 
   expect(result).toEqual(expect.stringContaining(expectedText));
 });
@@ -90,11 +95,12 @@ test('renders array property types', async () => {
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
   result = result.match(/## property3(.*\n)*/)[0];
+  result = removeFormatting(result);
 
   let expectedText = ''
-    + '    <tr><td>Title</td><td colspan=\"2\">Property 3</td></tr>\n'
-    + '    <tr><td>Required</td><td colspan=\"2\">No</td></tr>\n'
-    + '    <tr><td>Type</td><td colspan=\"2\">Array [<a href=\"./property3.html\">Property3</a>]</td></tr>';
+    + '<tr><td>Title</td><td colspan=\"2\">Property 3</td></tr>'
+    + '<tr><td>Required</td><td colspan=\"2\">No</td></tr>'
+    + '<tr><td>Type</td><td colspan=\"2\">Array [<a href=\"./property3.html\">Property3</a>]</td></tr>';
 
   expect(result).toEqual(expect.stringContaining(expectedText));
 });
