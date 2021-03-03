@@ -20,7 +20,7 @@ let defaultMergedSchema = {
       },
       property2: {
         title: 'Property 2',
-        type: 'integer',
+        type: ["string", "integer"],
         isRequired: false
       },
       property3: {
@@ -59,7 +59,7 @@ test('renders attributes', async () => {
   let expectedText = '## Attributes\n\n'
     + '<table><thead><tr><th colspan=\"2\">Name</th><th>Type</th></tr></thead>'
     + '<tr><td colspan=\"2\">property1</td><td>String</td></tr>'
-    + '<tr><td colspan=\"2\">property2</td><td>Integer</td></tr>'
+    + '<tr><td colspan=\"2\">property2</td><td>[string, integer]</td></tr>'
     + '<tr><td colspan=\"2\">property3</td><td>Array [<a href=\"./property3.html\">Property3</a>]</td></tr>'
     + '</tbody></table>';
 

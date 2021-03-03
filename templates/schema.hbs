@@ -1,7 +1,9 @@
-{{#if schema.title}}# {{ schema.title }}{{/if}}
+{{#if schema.title}}# {{ schema.title }}{{else if schema.description}}# {{ schema.description }}{{else}}# {{/if}}
 
-{{#if schema.description}}<p>{{ schema.description }}</p>{{/if}}
+{{#if schema.title}}{{#if schema.description}}<p>{{ schema.description }}</p>{{/if}}{{/if}}
+
 {{#if schema.id}}<p>{{ schema.id }}</p>{{/if}}
+{{#if schema.$id}}<p>{{ schema.$id }}</p>{{/if}}
 
 
 ## Attributes
@@ -15,7 +17,16 @@
 ```
 {{/if}}
 
-<hr/>
+{{#if schema.examples}}
+{{#each schema.examples}}
+## Example
+```
+{{{json this}}}
+```
+{{/each}}
+{{/if}}
+
+<hr />
 
 {{#each schema.properties}}
 
@@ -33,7 +44,7 @@
 
 {{#if this.properties}}
 
-{{#each this.properties}}  
+{{#each this.properties}}
 ### {{ @key }}
 {{> property }}
 {{/each}}
@@ -50,14 +61,31 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td>Title</td><td colspan="2">{{ this.title }}</td></tr>
-    <tr><td>Required</td><td colspan="2">{{#if this.isRequired}}Yes{{else}}No{{/if}}</td></tr>
+    <tr>
+      <td>Title</td>
+      <td colspan="2">{{ this.title }}</td>
+    </tr>
+    <tr>
+      <td>Required</td>
+      <td colspan="2">{{#if this.isRequired}}Yes{{else}}No{{/if}}</td>
+    </tr>
     {{propertyTypeRow this }}
-    {{#if this.enum}}<tr><td>Enum</td><td colspan="2">{{enumValues this.enum}}</td></tr>{{/if}}
-    {{#if this.minLength}}<tr><td>Min Length</td><td colspan="2">{{this.minLength}}</td></tr>{{/if}}
-    {{#if this.maxLength}}<tr><td>Max Length</td><td colspan="2">{{this.maxLength}}</td></tr>{{/if}}
-    {{#if this.format}}<tr><td>Format</td><td colspan="2">{{this.format}}</td></tr>{{/if}}
-    {{#if this.pattern}}<tr><td>Pattern</td><td colspan="2">{{this.pattern}}</td></tr>{{/if}}
+    {{#if this.enum}}<tr>
+      <td>Enum</td>
+      <td colspan="2">{{enumValues this.enum}}</td>
+    </tr>{{/if}}{{#if this.minLength}}<tr>
+      <td>Min Length</td>
+      <td colspan="2">{{this.minLength}}</td>
+    </tr>{{/if}}{{#if this.maxLength}}<tr>
+      <td>Max Length</td>
+      <td colspan="2">{{this.maxLength}}</td>
+    </tr>{{/if}}{{#if this.format}}<tr>
+      <td>Format</td>
+      <td colspan="2">{{this.format}}</td>
+    </tr>{{/if}}{{#if this.pattern}}<tr>
+      <td>Pattern</td>
+      <td colspan="2">{{this.pattern}}</td>
+    </tr>{{/if}}
   </tbody>
 </table>
 {{/inline}}
