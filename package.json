@@ -1,6 +1,6 @@
 {
   "name": "json-schema-static-docs",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "",
   "main": "lib/json-schema-static-docs.js",
   "bin": {
@@ -23,9 +23,11 @@
   },
   "dependencies": {
     "ajv": "^8.8.1",
+    "ajv-formats": "^2.1.1",
     "extend": "^3.0.2",
     "fast-glob": "^3.2.7",
     "handlebars": "^4.7.7",
+    "jsonpointer": "^5.0.0",
     "json-schema-ref-parser": "^9.0.9",
     "lodash": ">=4.17.21",
     "make-dir": "^3.1.0",
@@ -33,12 +35,10 @@
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "ajv-formats": "^2.1.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.4",
-    "jest": "^27.3.1",
-    "jsonpointer": "^5.0.0"
+    "jest": "^27.3.1"
   },
   "config": {
     "commitizen": {
