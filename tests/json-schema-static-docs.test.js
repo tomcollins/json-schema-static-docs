@@ -3,7 +3,7 @@ const path = require("path");
 const rimraf = require("rimraf");
 const _ = require("lodash");
 
-const JsonSchameStaticDocs = require("../lib/json-schema-static-docs.js");
+const JsonSchamaStaticDocs = require("../lib/json-schema-static-docs.js");
 
 let defaultTestOptions = {
   inputPath: "./tests/examples/schema/",
@@ -13,18 +13,28 @@ let testOptions = {};
 
 beforeEach(() => {
   testOptions = _.cloneDeep(defaultTestOptions);
-  if (!fs.existsSync(testOptions.outputPath)) {
-    fs.mkdirSync(testOptions.outputPath);
+  if (fs.existsSync(testOptions.outputPath)) {
+    rimraf.sync(testOptions.outputPath);
   }
+  fs.mkdirSync(testOptions.outputPath);
 });
 
-afterEach(() => {
-  rimraf.sync(testOptions.outputPath);
-});
+afterEach(() => {});
 
 test("resolves single schema", async () => {
-  const jsonSchameStaticDocs = new JsonSchameStaticDocs(testOptions);
-  await jsonSchameStaticDocs.generate();
+  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
+  const result = await jsonSchameStaticDocs.generate();
+  console.log(result);
+});
+
+test("handles absolute paths", async () => {
+  testOptions.inputPath = path.resolve(__dirname, "./examples/schema/");
+  testOptions.outputPath = path.resolve(__dirname, "./docs/");
+  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
+  let mergedSchemas = await jsonSchameStaticDocs.generate();
+  expect(mergedSchemas[2].relativeFilename).toBe("sub/different-person.json");
+  const exists = fs.existsSync("./tests/docs/sub/different-person.md");
+  expect(exists).toBe(true);
 });
 
 test("loads single additional data source", async () => {
@@ -32,7 +42,7 @@ test("loads single additional data source", async () => {
     foo: "./tests/examples/foo",
     bar: "./tests/examples/bar",
   };
-  const jsonSchameStaticDocs = new JsonSchameStaticDocs(testOptions);
+  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
   let mergedSchemas = await jsonSchameStaticDocs.generate();
   console.log(mergedSchemas);
   expect(mergedSchemas[0].filename).toBe("tests/examples/schema/name.json");
@@ -42,7 +52,7 @@ test("loads single additional data source", async () => {
 
 test("supports custom templates", async () => {
   testOptions.templatePath = path.join(__dirname, "examples/templates/");
-  const jsonSchameStaticDocs = new JsonSchameStaticDocs(testOptions);
+  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
   await jsonSchameStaticDocs.generate();
   let result = fs.readFileSync(path.join(testOptions.outputPath, "name.md"));
   expect(result.toString()).toBe("foo");
@@ -50,7 +60,7 @@ test("supports custom templates", async () => {
 
 test("allows templates to be skipped", async () => {
   testOptions.skipTemplates = true;
-  const jsonSchameStaticDocs = new JsonSchameStaticDocs(testOptions);
+  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
   await jsonSchameStaticDocs.generate();
   let result = fs.readFileSync(
     path.join(testOptions.outputPath, "person.json")
