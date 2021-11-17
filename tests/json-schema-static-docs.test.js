@@ -24,7 +24,7 @@ afterEach(() => {});
 test("resolves single schema", async () => {
   const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
   const result = await jsonSchameStaticDocs.generate();
-  console.log(result);
+  expect(result.length).toBe(3);
 });
 
 test("handles absolute paths", async () => {
@@ -44,7 +44,6 @@ test("loads single additional data source", async () => {
   };
   const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
   let mergedSchemas = await jsonSchameStaticDocs.generate();
-  console.log(mergedSchemas);
   expect(mergedSchemas[0].filename).toBe("tests/examples/schema/name.json");
   expect(mergedSchemas[0].foo.filename).toBe("tests/examples/foo/name.json");
   expect(mergedSchemas[0].bar.filename).toBe("tests/examples/bar/name.json");

@@ -22,22 +22,23 @@
     "node": ">=8"
   },
   "dependencies": {
-    "ajv": "^6.12.3",
+    "ajv": "^8.8.1",
     "extend": "^3.0.2",
-    "fast-glob": "^3.0.2",
+    "fast-glob": "^3.2.7",
     "handlebars": "^4.7.7",
-    "json-pointer": "^0.6.0",
-    "json-schema-ref-parser": "^7.1.0",
+    "json-schema-ref-parser": "^9.0.9",
     "lodash": ">=4.17.21",
-    "make-dir": "^3.0.0",
-    "mkdirp": "^1.0.0",
-    "rimraf": "^2.6.3"
+    "make-dir": "^3.1.0",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "commitizen": "^4.2.3",
-    "cz-conventional-changelog": "^2.1.0",
-    "husky": "^2.4.1",
-    "jest": "^24.8.0"
+    "ajv-formats": "^2.1.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "jsonpointer": "^5.0.0"
   },
   "config": {
     "commitizen": {
