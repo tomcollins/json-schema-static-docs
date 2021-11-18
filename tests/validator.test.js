@@ -4,10 +4,12 @@ const Validator = require("../lib/validator.js");
 let schema = {
   $id: "1",
   title: "1 unresolved",
+  type: "object",
   properties: {
     property1: {
-      type: "string",
+      type: ["string", "number"],
     },
+    additionalProperties: false,
   },
   additionalProperties: false,
 };
@@ -24,15 +26,17 @@ let dataInvalidType = {
   property1: null,
 };
 
+const defaultOptions = { allowUnionTypes: true };
+
 test("validates schemas and data", () => {
-  const validator = new Validator({ schemas: [schema] });
+  const validator = new Validator([schema], defaultOptions);
   const result = validator.validateSchemaAndData(schema, dataValid);
   expect(result).toBe(true);
 });
 
 test("fails with additional properties", () => {
   expect.assertions(2);
-  const validator = new Validator({ schemas: [schema] });
+  const validator = new Validator([schema], defaultOptions);
   let result;
   try {
     result = validator.validateSchemaAndData(schema, dataInvalidAdditional);
@@ -42,9 +46,9 @@ test("fails with additional properties", () => {
   }
 });
 
-test("XXX fails with invalid type", () => {
+test("fails with invalid type", () => {
   expect.assertions(3);
-  const validator = new Validator({ schemas: [schema] });
+  const validator = new Validator([schema], defaultOptions);
   let result;
   try {
     result = validator.validateSchemaAndData(schema, dataInvalidType);
