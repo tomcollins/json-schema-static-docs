@@ -2,7 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/json-schema-static-docs.svg)](https://badge.fury.io/js/json-schema-static-docs) [![CircleCI](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master.svg?style=svg)](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-
 ## Installation
 
 ```
@@ -17,7 +16,10 @@ const JsonSchemaStaticDocs = require('json-schema-static-docs');
 ( async () => {
   let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
     inputPath: './schema',
-    outputPath: './docs'
+    outputPath: './docs',
+    ajvOptions: {
+      allowUnionTypes: true
+    }
   });
   await jsonSchemaStaticDocs.generate();
   console.log('Documents generated.');
@@ -26,9 +28,9 @@ const JsonSchemaStaticDocs = require('json-schema-static-docs');
 
 ## Custom Templates
 
-Templates are authored in [handlebars.js](https://handlebarsjs.com). 
+Templates are authored in [handlebars.js](https://handlebarsjs.com).
 
-The default template is [templates/markdown/schema.hbs](https://github.com/tomcollins/json-schema-static-docs/blob/master/templates/markdown/schema.hbs). 
+The default template is [templates/markdown/schema.hbs](https://github.com/tomcollins/json-schema-static-docs/blob/master/templates/markdown/schema.hbs).
 
 You can provide your own custom templates using the `templatePath` option.
 
