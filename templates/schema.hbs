@@ -30,14 +30,20 @@
 
 {{#each schema.properties}}
 
-## {{ @key }}
-
-{{> property }}
+{{> property propertyKey=@key }}
 
 {{/each}}
 
+
+
+
 {{#*inline "property"}}
 
+{{#if (isDefined parentKey)}}
+  ### {{ parentKey }}.{{ propertyKey }}
+{{else}}
+  ## {{ propertyKey }}
+{{/if}}
 
 {{#if (isExternalRef this.$ref)}}
   <p>Defined in {{{ refToLink this.$ref this.$ref }}}</p>
@@ -49,15 +55,15 @@
 {{> propertyTable}}
 
 {{#unless (isDefined this.$ref)}}
-  {{#if this.properties}}
-    {{#each this.properties}}
-    ### {{ @key }}
-    {{> property }}
-    {{/each}}
-  {{/if}}
+{{#if this.properties}}
+{{#each this.properties}}
+{{> property parentKey=../propertyKey propertyKey=@key }}
+{{/each}}
+{{/if}}
 {{/unless}}
 
 {{/inline}}
+
 
 {{#*inline "propertyTable"}}
 <table>
