@@ -65,9 +65,9 @@ test("renders attributes", async () => {
   let expectedText =
     "## Attributes\n\n" +
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
-    '<tr><td colspan="2">property1</td><td>String</td></tr>' +
-    '<tr><td colspan="2">property2</td><td>[string, integer]</td></tr>' +
-    '<tr><td colspan="2">property3</td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
+    '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
+    '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
+    '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
     "</tbody></table>";
 
   expect(result).toEqual(expect.stringContaining(expectedText));
@@ -92,7 +92,7 @@ test("renders string property enums", async () => {
 });
 
 test("renders array property types", async () => {
-  expect.assertions(1);
+  expect.assertions(2);
   rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
   await rendererMarkdown.setup();
   let result = rendererMarkdown.renderSchema(mergedSchema);
@@ -100,11 +100,11 @@ test("renders array property types", async () => {
   result = result.match(/## property3(.*\n)*/)[0];
   result = removeFormatting(result);
 
-  let expectedText =
-    "" +
-    '<tr><td>Title</td><td colspan="2">Property 3</td></tr>' +
-    '<tr><td>Required</td><td colspan="2">No</td></tr>' +
+  let expectedTitle = '<tr><td>Title</td><td colspan="2">Property 3</td></tr>';
+  expect(result).toEqual(expect.stringContaining(expectedTitle));
+
+  let expectedType =
     '<tr><td>Type</td><td colspan="2">Array [<a href="property3.html">Property3.html</a>]</td></tr>';
 
-  expect(result).toEqual(expect.stringContaining(expectedText));
+  expect(result).toEqual(expect.stringContaining(expectedType));
 });
