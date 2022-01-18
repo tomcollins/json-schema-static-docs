@@ -30,27 +30,40 @@
 
 {{#each schema.properties}}
 
-## {{ @key }}
-
-{{> property }}
+{{> property propertyKey=@key }}
 
 {{/each}}
 
+
+
+
 {{#*inline "property"}}
+
+{{#if (isDefined parentKey)}}
+  ### {{ parentKey }}.{{ propertyKey }}
+{{else}}
+  ## {{ propertyKey }}
+{{/if}}
+
+{{#if (isExternalRef this.$ref)}}
+  <p>Defined in {{{ refToLink this.$ref this.$ref }}}</p>
+{{/if}}
+
 
 {{#if this.description}}<p>{{ this.description }}</p>{{/if}}
 
 {{> propertyTable}}
 
+{{#unless (isDefined this.$ref)}}
 {{#if this.properties}}
-
 {{#each this.properties}}
-### {{ @key }}
-{{> property }}
+{{> property parentKey=../propertyKey propertyKey=@key }}
 {{/each}}
-
 {{/if}}
+{{/unless}}
+
 {{/inline}}
+
 
 {{#*inline "propertyTable"}}
 <table>
@@ -61,14 +74,18 @@
     </tr>
   </thead>
   <tbody>
+    {{#if this.title}}
     <tr>
       <td>Title</td>
       <td colspan="2">{{ this.title }}</td>
     </tr>
+    {{/if}}
+    {{#if (isDefined this.isRequired)}}
     <tr>
       <td>Required</td>
       <td colspan="2">{{#if this.isRequired}}Yes{{else}}No{{/if}}</td>
     </tr>
+    {{/if}}
     {{propertyTypeRow this }}
     {{#if this.enum}}<tr>
       <td>Enum</td>
@@ -86,6 +103,10 @@
       <td>Pattern</td>
       <td colspan="2">{{this.pattern}}</td>
     </tr>{{/if}}
+    {{!-- {{#if (isArrayOfStringLikeValues this.examples) }}<tr>
+      <td>Examples</td>
+      <td colspan="2"><ul>{{#each this.examples}}<li>{{ this }}</li>{{/each}}</ul></td>
+    </tr>{{/if}} --}}
   </tbody>
 </table>
 {{/inline}}
