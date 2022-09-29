@@ -60,10 +60,10 @@ test("renders attributes", async () => {
   await rendererMarkdown.setup();
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
-  result = result.match(/## Attributes(.*\n)*/)[0];
+  result = result.match(/## Properties(.*\n)*/)[0];
 
   let expectedText =
-    "## Attributes\n\n" +
+    "## Properties\n\n" +
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +

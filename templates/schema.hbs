@@ -6,7 +6,7 @@
 {{#if schema.$id}}<p>{{ schema.$id }}</p>{{/if}}
 
 
-## Attributes
+## Properties
 
 {{attributesTable schema }}
 
@@ -54,7 +54,14 @@
 
 {{> propertyTable}}
 
-{{#unless (isDefined this.$ref)}}
+{{#unless (isDefined parentKey)}}
+  {{#if this.properties}}
+  ### Properties
+  {{attributesTable this propertyKey }}
+  {{/if}}
+{{/unless}}
+
+{{#unless (isExternalRef this.$ref)}}
 {{#if this.properties}}
 {{#each this.properties}}
 {{> property parentKey=../propertyKey propertyKey=@key }}
