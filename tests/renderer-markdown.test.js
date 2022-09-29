@@ -34,27 +34,6 @@ let defaultMergedSchema = {
     },
   },
 };
-let nestedObjectMergedSchema = {
-  schema: {
-    title: "My Schema",
-    properties: {
-      property1: {
-        title: "Property 1",
-        type: "object",
-        properties: {
-          property2: {
-            title: "Property 2",
-            type: "string",
-          },
-          property3: {
-            title: "Property 3",
-            type: "string",
-          },
-        },
-      },
-    },
-  },
-};
 let mergedSchema = {};
 
 const removeFormatting = (value) => {
@@ -81,10 +60,10 @@ test("renders attributes", async () => {
   await rendererMarkdown.setup();
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
-  result = result.match(/## Attributes(.*\n)*/)[0];
+  result = result.match(/## Properties(.*\n)*/)[0];
 
   let expectedText =
-    "## Attributes\n\n" +
+    "## Properties\n\n" +
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
@@ -120,27 +99,6 @@ test("renders array property types", async () => {
 
   result = result.match(/## property3(.*\n)*/)[0];
   result = removeFormatting(result);
-
-  let expectedTitle = '<tr><td>Title</td><td colspan="2">Property 3</td></tr>';
-  expect(result).toEqual(expect.stringContaining(expectedTitle));
-
-  let expectedType =
-    '<tr><td>Type</td><td colspan="2">Array [<a href="property3.html">Property3.html</a>]</td></tr>';
-
-  expect(result).toEqual(expect.stringContaining(expectedType));
-});
-
-test("renders nested object properties", async () => {
-  mergedSchema = _.cloneDeep(nestedObjectMergedSchema);
-  expect.assertions(2);
-  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
-  await rendererMarkdown.setup();
-  let result = rendererMarkdown.renderSchema(mergedSchema);
-
-  // result = result.match(/## property3(.*\n)*/)[0];
-  result = removeFormatting(result);
-
-  console.log(result);
 
   let expectedTitle = '<tr><td>Title</td><td colspan="2">Property 3</td></tr>';
   expect(result).toEqual(expect.stringContaining(expectedTitle));
