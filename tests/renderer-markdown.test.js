@@ -34,6 +34,18 @@ let defaultMergedSchema = {
     },
   },
 };
+const defaultMergedSchemaWithConst = {
+  schema: {
+    title: "My Schema",
+    properties: {
+      property1: {
+        title: "Property 1",
+        type: "string",
+        const: "foo",
+      },
+    },
+  },
+};
 let mergedSchema = {};
 
 const removeFormatting = (value) => {
@@ -61,16 +73,35 @@ test("renders attributes", async () => {
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
   result = result.match(/## Properties(.*\n)*/)[0];
+  result = removeFormatting(result);
 
   let expectedText =
-    "## Properties\n\n" +
+    "## Properties" +
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
     '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
     "</tbody></table>";
 
-  expect(result).toEqual(expect.stringContaining(expectedText));
+  expect(result).toContain(expectedText);
+});
+
+test("renders attributes with const", async () => {
+  expect.assertions(1);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(defaultMergedSchemaWithConst);
+
+  result = result.match(/## Properties(.*\n)*/)[0];
+  result = removeFormatting(result);
+
+  let expectedText =
+    "## Properties" +
+    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
+    '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String=foo</td></tr>' +
+    "</tbody></table>";
+
+  expect(result).toContain(expectedText);
 });
 
 test("renders string property enums", async () => {
@@ -83,12 +114,30 @@ test("renders string property enums", async () => {
   result = removeFormatting(result);
 
   let expectedText =
-    "" + '<tr><td>Title</td><td colspan="2">Property 1</td></tr>';
-  +'<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
+    '<tr><td>Title</td><td colspan="2">Property 1</td></tr>' +
+    '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
     '<tr><td>Type</td><td colspan="2">String</td></tr>' +
     '<tr><td>Enum</td><td colspan="2"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
 
-  expect(result).toEqual(expect.stringContaining(expectedText));
+  expect(result).toContain(expectedText);
+});
+
+test("renders string property with const", async () => {
+  expect.assertions(1);
+  mergedSchema = _.cloneDeep(defaultMergedSchemaWithConst);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchema);
+
+  result = result.match(/## property1(.*\n)*/)[0];
+  result = removeFormatting(result);
+
+  let expectedText =
+    '<tr><td>Title</td><td colspan="2">Property 1</td></tr>' +
+    '<tr><td>Type</td><td colspan="2">String</td></tr>' +
+    '<tr><td>Const</td><td colspan="2">foo</td></tr>';
+
+  expect(result).toContain(expectedText);
 });
 
 test("renders array property types", async () => {
@@ -106,5 +155,5 @@ test("renders array property types", async () => {
   let expectedType =
     '<tr><td>Type</td><td colspan="2">Array [<a href="property3.html">Property3.html</a>]</td></tr>';
 
-  expect(result).toEqual(expect.stringContaining(expectedType));
+  expect(result).toContain(expectedType);
 });
