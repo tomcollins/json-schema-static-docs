@@ -94,6 +94,10 @@
     </tr>
     {{/if}}
     {{propertyTypeRow this }}
+    {{#if this.const}}<tr>
+      <td>Const</td>
+      <td colspan="2">{{this.const}}</td>
+    </tr>{{/if}}
     {{#if this.enum}}<tr>
       <td>Enum</td>
       <td colspan="2">{{enumValues this.enum}}</td>
