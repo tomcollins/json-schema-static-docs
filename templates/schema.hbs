@@ -99,7 +99,7 @@
       <td colspan="2">{{this.const}}</td>
     </tr>{{/if}}{{#if this.enum}}<tr>
       <td>Enum</td>
-      <td colspan="2">{{enumValues this.enum}}</td>
+      <td colspan="2">{{#if this.meta:enum}}<dl>{{#each this.meta:enum}}<dt>{{@key}}</dt><dd>{{this}}</dd>{{/each}}</dl>{{else}}{{enumValues this.enum}}{{/if}}</td>
     </tr>{{/if}}{{#if this.minLength}}<tr>
       <td>Min Length</td>
       <td colspan="2">{{this.minLength}}</td>

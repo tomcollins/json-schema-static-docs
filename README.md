@@ -26,6 +26,22 @@ const JsonSchemaStaticDocs = require('json-schema-static-docs');
 })();
 ```
 
+## Describing Enums
+
+Json-schema allows a set of enumeration values to be defined for a string property but does not allow descriptions to be defined for each value. Descriptions within documentation ca.n be very useful
+
+This library supports the `meta:enum` convention (inspired by [adobe/jsonschema2md](https://github.com/adobe/jsonschema2md) to allow descriptions to be defined for enums.
+
+```yml
+property1: {
+  title: "Property 1",
+  type: "string",
+  enum: ["foo", 42],
+  meta:enum: {
+    foo: Description for foo
+    42: Description for 42
+```
+
 ## Custom Templates
 
 Templates are authored in [handlebars.js](https://handlebarsjs.com).
