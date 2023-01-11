@@ -64,7 +64,7 @@
 {{#unless (isExternalRef this.$ref)}}
 {{#if this.properties}}
 {{#each this.properties}}
-{{> property parentKey=../propertyKey propertyKey=@key }}
+{{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
 {{/each}}
 {{/if}}
 {{/unless}}

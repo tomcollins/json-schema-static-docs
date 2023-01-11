@@ -41,6 +41,21 @@ let defaultMergedSchema = {
           42: "Description for 42",
         },
       },
+      property5: {
+        title: "Property 5",
+        type: "object",
+        isRequired: true,
+        properties: {
+          "property5.1": {
+            type: "object",
+            properties: {
+              "property5.1.1": {
+                type: "string",
+              },
+            },
+          },
+        },
+      },
     },
   },
 };
@@ -92,6 +107,7 @@ test("renders attributes", async () => {
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
     '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
     '<tr><td colspan="2"><a href="#property4">property4</a></td><td>String</td></tr>' +
+    '<tr><td colspan="2"><a href="#property5">property5</a></td><td>Object</td></tr>' +
     "</tbody></table>";
 
   expect(result).toContain(expectedText);
@@ -111,6 +127,34 @@ test("renders attributes with const", async () => {
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String=foo</td></tr>' +
     "</tbody></table>";
+
+  expect(result).toContain(expectedText);
+});
+
+// tests recursive rendering of nested properties
+test("renders nested property title correctly", async () => {
+  expect.assertions(1);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchema);
+
+  result = result.match(/## property5(.*\n)*/)[0];
+  result = removeFormatting(result);
+
+  let expectedText =
+    '<tr><td>Title</td><td colspan="2">Property 5</td></tr>' +
+    '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
+    '<tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>  ' +
+    "### Properties" +
+    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
+    '<tr><td colspan="2"><a href="#property5property5.1">property5.1</a></td><td>Object</td></tr>' +
+    "</tbody></table>  " +
+    "### .property5.property5.1" +
+    '<table><thead><tr><th>Property</th><th colspan="2">Value</th></tr></thead>' +
+    '<tbody><tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>  ' +
+    "### .property5.property5.1.property5.1.1" +
+    '<table><thead><tr><th>Property</th><th colspan="2">Value</th></tr></thead><tbody>' +
+    '<tr><td>Type</td><td colspan="2">String</td></tr></tbody></table>';
 
   expect(result).toContain(expectedText);
 });
