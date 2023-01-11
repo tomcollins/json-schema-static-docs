@@ -31,6 +31,16 @@ let defaultMergedSchema = {
           type: "String",
         },
       },
+      property4: {
+        title: "Property 4",
+        type: "string",
+        isRequired: true,
+        enum: ["foo", 42],
+        "meta:enum": {
+          foo: "Description for foo",
+          42: "Description for 42",
+        },
+      },
     },
   },
 };
@@ -81,6 +91,7 @@ test("renders attributes", async () => {
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
     '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
+    '<tr><td colspan="2"><a href="#property4">property4</a></td><td>String</td></tr>' +
     "</tbody></table>";
 
   expect(result).toContain(expectedText);
@@ -118,6 +129,24 @@ test("renders string property enums", async () => {
     '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
     '<tr><td>Type</td><td colspan="2">String</td></tr>' +
     '<tr><td>Enum</td><td colspan="2"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
+
+  expect(result).toContain(expectedText);
+});
+
+test("renders string property enums with meta description", async () => {
+  expect.assertions(1);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchema);
+
+  result = result.match(/## property4(.*\n)*/)[0];
+  result = removeFormatting(result);
+
+  let expectedText =
+    '<tr><td>Title</td><td colspan="2">Property 4</td></tr>' +
+    '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
+    '<tr><td>Type</td><td colspan="2">String</td></tr>' +
+    '<tr><td>Enum</td><td colspan="2"><dl><dt>42</dt><dd>Description for 42</dd><dt>foo</dt><dd>Description for foo</dd></dl></td></tr>';
 
   expect(result).toContain(expectedText);
 });

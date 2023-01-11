@@ -2,7 +2,7 @@
   "$id": "http://example.com/schemas/sub/different-person.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Person",
-  "description": "A DVLA person.",
+  "description": "A person.",
   "type": "object",
   "properties": {
     "name": {
@@ -14,7 +14,7 @@
     "friendsNames": {
       "type": "array",
       "title": "Friends names",
-      "description": "Set if Tachograph history items.",
+      "description": "Set of friends names.",
       "items": {
         "$ref": "../name.json"
       }
@@ -32,10 +32,10 @@
   "examples": [
     {
       "name": {
-        "firstNames": "Thomas John",
-        "lastName": "Collins"
+        "firstNames": "Seymour",
+        "lastName": "Butts"
       },
-      "dateOfBirth": "1980-10-08"
+      "dateOfBirth": "1982-04-30"
     }
   ]
 }
