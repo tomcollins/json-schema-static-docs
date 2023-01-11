@@ -28,16 +28,31 @@ const JsonSchemaStaticDocs = require('json-schema-static-docs');
 
 ## Describing Enums
 
-Json-schema allows a set of enumeration values to be defined for a string property but does not allow descriptions to be defined for each value. Descriptions within documentation ca.n be very useful
+Json-schema allows a set of enumeration values to be defined for a string property but does not allow descriptions to be defined for each value. Descriptions within documentation can be very useful.
 
 This library supports the `meta:enum` convention (inspired by [adobe/jsonschema2md](https://github.com/adobe/jsonschema2md) to allow descriptions to be defined for enums.
 
+You will need to enable this feature using the `enableMetaEnum` option:
+
+```javascript
+let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
+  inputPath: "./schema",
+  outputPath: "./docs",
+  enableMetaEnum: true,
+});
+await jsonSchemaStaticDocs.generate();
+```
+
+_This allows the `meta:enum` keyword to be used when applying strict validation._
+
+And then define the `meta:enum` descriptions adjacent to your `enum` e.g.
+
 ```yml
-property1: {
+property1:
   title: "Property 1",
   type: "string",
   enum: ["foo", 42],
-  meta:enum: {
+  meta:enum:
     foo: Description for foo
     42: Description for 42
 ```
