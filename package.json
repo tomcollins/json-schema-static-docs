@@ -1,6 +1,6 @@
 {
   "name": "json-schema-static-docs",
-  "version": "0.16.3",
+  "version": "0.17.0",
   "description": "",
   "main": "lib/json-schema-static-docs.js",
   "bin": {
