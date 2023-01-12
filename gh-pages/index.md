@@ -1,3 +1,7 @@
+---
+title: JSON Schema Static Docs
+---
+
 # Json Schema Static Docs
 
 [![npm version](https://badge.fury.io/js/json-schema-static-docs.svg)](https://badge.fury.io/js/json-schema-static-docs) [![CircleCI](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master.svg?style=svg)](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master)
