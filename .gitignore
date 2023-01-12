@@ -1,3 +1,5 @@
 node_modules
 tests/docs
 docs
+gh-pages/.jekyll-cache
+gh-pages/_site
