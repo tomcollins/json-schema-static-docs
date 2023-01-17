@@ -16,6 +16,8 @@ title: JSON Schema Static Docs
 
 You can view a [detailed description of supported keywords](./support.html).
 
+See [this post](https://careers.dft.gov.uk/dvla-software-developers-behind-the-screens/) describing how this library is used by the [DVLA](https://github.com/dvla/).
+
 ## Examples
 
 | Example documentation            | Schema                         |
