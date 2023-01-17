@@ -102,7 +102,7 @@ test("renders attributes", async () => {
 
   let expectedText =
     "## Properties" +
-    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
+    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
     '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
@@ -124,7 +124,7 @@ test("renders attributes with const", async () => {
 
   let expectedText =
     "## Properties" +
-    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
+    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String=foo</td></tr>' +
     "</tbody></table>";
 
@@ -144,15 +144,15 @@ test("renders nested property title correctly", async () => {
   let expectedText =
     '<tr><td>Title</td><td colspan="2">Property 5</td></tr>' +
     '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
-    '<tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>  ' +
+    '<tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>' +
     "### Properties" +
-    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead>' +
+    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property5property5.1">property5.1</a></td><td>Object</td></tr>' +
-    "</tbody></table>  " +
-    "### .property5.property5.1" +
+    "</tbody></table>" +
+    "### property5.property5.1" +
     '<table><thead><tr><th>Property</th><th colspan="2">Value</th></tr></thead>' +
-    '<tbody><tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>  ' +
-    "### .property5.property5.1.property5.1.1" +
+    '<tbody><tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>' +
+    "### property5.property5.1.property5.1.1" +
     '<table><thead><tr><th>Property</th><th colspan="2">Value</th></tr></thead><tbody>' +
     '<tr><td>Type</td><td colspan="2">String</td></tr></tbody></table>';
 
