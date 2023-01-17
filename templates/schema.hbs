@@ -40,9 +40,9 @@
 {{#*inline "property"}}
 
 {{#if (isDefined parentKey)}}
-  ### {{ parentKey }}.{{ propertyKey }}
+### {{ parentKey }}.{{ propertyKey }}
 {{else}}
-  ## {{ propertyKey }}
+## {{ propertyKey }}
 {{/if}}
 
 {{#if (isExternalRef this.$ref)}}
@@ -56,7 +56,7 @@
 
 {{#unless (isDefined parentKey)}}
   {{#if this.properties}}
-  ### Properties
+### Properties
   {{attributesTable this propertyKey }}
   {{/if}}
 {{/unless}}
@@ -64,7 +64,11 @@
 {{#unless (isExternalRef this.$ref)}}
 {{#if this.properties}}
 {{#each this.properties}}
+{{#if (isDefined ../parentKey)}}
 {{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
+{{else}}
+{{> property parentKey=../propertyKey propertyKey=@key }}
+{{/if}}
 {{/each}}
 {{/if}}
 {{/unless}}
@@ -106,6 +110,21 @@
     </tr>{{/if}}{{#if this.maxLength}}<tr>
       <td>Max Length</td>
       <td colspan="2">{{this.maxLength}}</td>
+    </tr>{{/if}}{{#if this.minimum}}<tr>
+      <td>Minimum</td>
+      <td colspan="2">{{this.minimum}}</td>
+    </tr>{{/if}}{{#if this.exclusiveMinimum}}<tr>
+      <td>Exclusive Minimum</td>
+      <td colspan="2">{{this.exclusiveMinimum}}</td>
+    </tr>{{/if}}{{#if this.maximum}}<tr>
+      <td>Maximum</td>
+      <td colspan="2">{{this.maximum}}</td>
+    </tr>{{/if}}{{#if this.exclusiveMaximum}}<tr>
+      <td>Exclusive Maximum</td>
+      <td colspan="2">{{this.exclusiveMaximum}}</td>
+    </tr>{{/if}}{{#if this.multipleOf}}<tr>
+      <td>Multiple Of</td>
+      <td colspan="2">{{this.multipleOf}}</td>
     </tr>{{/if}}{{#if this.format}}<tr>
       <td>Format</td>
       <td colspan="2">{{this.format}}</td>

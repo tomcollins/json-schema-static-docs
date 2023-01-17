@@ -1,0 +1,42 @@
+$id: name.yml
+$schema: http://json-schema.org/draft-07/schema#
+title: Name
+description: A name entity containing a title, first name and last name.
+type: object
+examples:
+  - title: Mr
+    firstName: "Seymour"
+    lastName: "Butts"
+properties:
+  title:
+    title: Title
+    description: The title of a name entity
+    type: string
+    enum:
+      - Mr
+      - Mrs
+      - Miss
+  firstName:
+    title: First Name
+    description: The first name of a name entity
+    type: string
+    minLength: 3
+    maxLength: 100
+    examples:
+      - Tom
+      - Dick
+      - Harry
+  lastName:
+    title: Last Name
+    description: The last name of a name entity
+    type: string
+    minLength: 3
+    maxLength: 100
+    examples:
+      - Smith
+      - Jones
+additionalProperties: false
+required:
+  - title
+  - firstName
+  - lastName

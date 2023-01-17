@@ -6,6 +6,23 @@ title: JSON Schema Static Docs
 
 [![npm version](https://badge.fury.io/js/json-schema-static-docs.svg)](https://badge.fury.io/js/json-schema-static-docs) [![CircleCI](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master.svg?style=svg)](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master)
 
+## Features
+
+- supports examples for schema and properties
+- generates links between documents when schema include relative $ref values
+- describes array item schema
+- able to render nested properties
+- supports descriptions when using string enum values
+
+You can view a [detailed description of supported keywords](./support.html).
+
+## Examples
+
+| Example documentation            | Schema                         |
+| -------------------------------- | ------------------------------ |
+| [Person](./examples/person.html) | [person.yml](./yml/person.yml) |
+| [Name](./examples/name.html)     | [name.yml](./yml/name.yml)     |
+
 ## Installation
 
 ```bash
@@ -28,6 +45,40 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
   await jsonSchemaStaticDocs.generate();
   console.log("Documents generated.");
 })();
+```
+
+## Options
+
+| Parameter      | Description                                   | Default            |
+| -------------- | --------------------------------------------- | ------------------ |
+| inputPath      | Directory containing your schema              | "schema"           |
+| inputFileGlob  | Glob used to look for schema files            | "\*_/_.{yml,json}" |
+| outputPath     | Where to write documentation files            | "docs"             |
+| templatePath   | Where to find templates                       | "templates"        |
+| ajvOptions     | Options to pass to [AJV](https://ajv.js.org/) | {}                 |
+| enableMetaEnum | Allow documentation of enum values            | false              |
+| addFrontMatter | Add front matter to generated documentation   | false              |
+
+## Markdown Front Matter
+
+If you want to include markdown front matter (for Jekyll, Hugo etc) use the `addFrontMatter` options.
+
+```javascript
+let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
+  inputPath: "./schema",
+  outputPath: "./docs",
+  addFrontMatter: true,
+});
+await jsonSchemaStaticDocs.generate();
+```
+
+This will prepend generated markdown documents with the schema title or it.
+
+```yml
+---
+title: The schema title or $id
+---
+# documentation starts here
 ```
 
 ## Describing Enums
