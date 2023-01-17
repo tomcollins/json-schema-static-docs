@@ -6,9 +6,7 @@ test("loads single schema", async () => {
 });
 
 test("loads multiple schema", async () => {
-  const results = await Loader.loadJsoloadFilesnFiles(
-    "./tests/examples/schema/**.json"
-  );
+  const results = await Loader.loadFiles("./tests/examples/schema/**.json");
   expect(results).toHaveLength(2);
 });
 
