@@ -1,9 +1,11 @@
 ---
 title: Person
+description: JSON schema example for a person entity
+
 ---
 # Person
 
-<p>A person entity containing a name and date of birth.</p>
+<p>JSON schema example for a person entity</p>
 
 
 <p>person.yml</p>
@@ -72,7 +74,7 @@ title: Person
   <p>Defined in <a href="./name.html">./name.yml</a></p>
 
 
-<p>A name entity containing a title, first name and last name.</p>
+<p>JSON schema example for a name entity</p>
 
 <table>
   <thead>

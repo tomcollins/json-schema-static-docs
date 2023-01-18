@@ -1,9 +1,11 @@
 ---
 title: Name
+description: JSON schema example for a name entity
+
 ---
 # Name
 
-<p>A name entity containing a title, first name and last name.</p>
+<p>JSON schema example for a name entity</p>
 
 
 <p>name.yml</p>

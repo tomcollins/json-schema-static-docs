@@ -6,6 +6,8 @@ title: JSON Schema Static Docs
 
 [![npm version](https://badge.fury.io/js/json-schema-static-docs.svg)](https://badge.fury.io/js/json-schema-static-docs) [![CircleCI](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master.svg?style=svg)](https://circleci.com/gh/tomcollins/json-schema-static-docs/tree/master)
 
+This library generates human friendly static markdown documents based on a set of JSON schema documents.
+
 ## Features
 
 - supports examples for schema and properties
@@ -20,10 +22,7 @@ See [this post](https://careers.dft.gov.uk/dvla-software-developers-behind-the-s
 
 ## Examples
 
-| Example documentation            | Schema                         |
-| -------------------------------- | ------------------------------ |
-| [Person](./examples/person.html) | [person.yml](./yml/person.yml) |
-| [Name](./examples/name.html)     | [name.yml](./yml/name.yml)     |
+{% include examples-table.md %}
 
 ## Installation
 

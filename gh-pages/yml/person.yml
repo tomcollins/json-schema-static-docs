@@ -1,7 +1,7 @@
 $id: person.yml
 $schema: http://json-schema.org/draft-07/schema#
 title: Person
-description: A person entity containing a name and date of birth.
+description: JSON schema example for a person entity
 type: object
 examples:
   - name:
