@@ -1,3 +1,8 @@
+---
+title: Support
+description: Detailed description of support for JSON schema keywords
+---
+
 # JSON Schema Support
 
 This page describes current ssupport for JSON schema keywords.

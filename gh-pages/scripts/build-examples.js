@@ -13,6 +13,7 @@ console.log("examplesPath", examplesPath);
     ajvOptions: {
       allowUnionTypes: true,
     },
+    enableMetaEnum: true,
     addFrontMatter: true,
   });
   await jsonSchemaStaticDocs.generate();

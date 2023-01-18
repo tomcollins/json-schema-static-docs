@@ -1,7 +1,7 @@
 $id: name.yml
 $schema: http://json-schema.org/draft-07/schema#
 title: Name
-description: A name entity containing a title, first name and last name.
+description: JSON schema example for a name entity
 type: object
 examples:
   - title: Mr
