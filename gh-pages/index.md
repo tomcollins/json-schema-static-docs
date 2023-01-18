@@ -16,13 +16,15 @@ This library generates human friendly static markdown documents based on a set o
 - able to render nested properties
 - supports descriptions when using string enum values
 
-You can view a [detailed description of supported keywords](./support.html).
+You can view a [detailed description of supported keywords](/json-schema-static-docs/support/).
 
 See [this post](https://careers.dft.gov.uk/dvla-software-developers-behind-the-screens/) describing how this library is used by the [DVLA](https://github.com/dvla/).
 
 ## Examples
 
 {% include examples-table.md %}
+
+See the [examples page](/json-schema-static-docs/examples/) for more info.
 
 ## Installation
 

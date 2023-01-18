@@ -1,6 +1,7 @@
 ---
 title: Examples
 description: Examples of JSON schema and associated human friendly documentation
+permalink: /examples/
 ---
 
 # Examples
