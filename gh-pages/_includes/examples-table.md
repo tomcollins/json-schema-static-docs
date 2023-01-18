@@ -1,5 +1,5 @@
-| HTML documentation                                | JSON Schema                    |
-| ------------------------------------------------- | ------------------------------ |
-| [Person](./examples/person.html)                  | [person.yml](./yml/person.yml) |
-| [Name](./examples/name.html)                      | [name.yml](./yml/name.yml)     |
-| [Enum Value Documentation](./examples/enums.html) | [enums.yml](./yml/enums.yml)   |
+| HTML documentation                                                       | JSON Schema                                           |
+| ------------------------------------------------------------------------ | ----------------------------------------------------- |
+| [Person](/json-schema-static-docs/examples/person.html)                  | [person.yml](/json-schema-static-docs/yml/person.yml) |
+| [Name](/json-schema-static-docs/examples/name.html)                      | [name.yml](/json-schema-static-docs/yml/name.yml)     |
+| [Enum Value Documentation](/json-schema-static-docs/examples/enums.html) | [enums.yml](/json-schema-static-docs/yml/enums.yml)   |

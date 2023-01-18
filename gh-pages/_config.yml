@@ -2,5 +2,6 @@
 
 title: "JSON Schema Static Docs"
 remote_theme: pages-themes/cayman@v0.2.0
+baseurl: /json-schema-static-docs
 plugins:
   - jekyll-remote-theme

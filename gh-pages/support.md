@@ -1,6 +1,7 @@
 ---
 title: Support
 description: Detailed description of support for JSON schema keywords
+permalink: /support/
 ---
 
 # JSON Schema Support
