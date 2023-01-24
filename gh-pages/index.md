@@ -8,6 +8,15 @@ title: JSON Schema Static Docs
 
 This library generates human friendly static markdown documents based on a set of JSON schema documents.
 
+## Support for JSON schema specification versions
+
+Currently supports schema specified using the following [specification versions](https://json-schema.org/specification-links.html):
+draft-06, draft-07 and draft-2019-09.
+
+Examples for each specification version can be found below.
+
+You can view a [detailed description of supported keywords](/json-schema-static-docs/support/).
+
 ## Features
 
 - supports examples for schema and properties
@@ -15,8 +24,6 @@ This library generates human friendly static markdown documents based on a set o
 - describes array item schema
 - able to render nested properties
 - supports descriptions when using string enum values
-
-You can view a [detailed description of supported keywords](/json-schema-static-docs/support/).
 
 See [this post](https://careers.dft.gov.uk/dvla-software-developers-behind-the-screens/) describing how this library is used by the [DVLA](https://github.com/dvla/).
 

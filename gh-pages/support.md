@@ -6,7 +6,10 @@ permalink: /support/
 
 # JSON Schema Support
 
-This page describes current ssupport for JSON schema keywords.
+This library currently supports schema specified using the following [specification versions](https://json-schema.org/specification-links.html):
+draft-06, draft-07 and draft-2019-09.
+
+Supported keywords are described below:
 
 ## Core Vocabulary
 
