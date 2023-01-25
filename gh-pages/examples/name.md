@@ -7,9 +7,12 @@ description: JSON schema example for a name entity
 
 <p>JSON schema example for a name entity</p>
 
-
-<p>name.yml</p>
-
+<table>
+<tbody>
+<tr><th>$id</th><td>name.yml</td></tr>
+<tr><th>$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
+</tbody>
+</table>
 
 ## Properties
 
@@ -142,5 +145,67 @@ description: JSON schema example for a name entity
 
 
 
+
+## Schema
+```
+{
+    "$id": "name.yml",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Name",
+    "description": "JSON schema example for a name entity",
+    "type": "object",
+    "examples": [
+        {
+            "title": "Mr",
+            "firstName": "Seymour",
+            "lastName": "Butts"
+        }
+    ],
+    "properties": {
+        "title": {
+            "title": "Title",
+            "description": "The title of a name entity",
+            "type": "string",
+            "enum": [
+                "Mr",
+                "Mrs",
+                "Miss"
+            ],
+            "isRequired": true
+        },
+        "firstName": {
+            "title": "First Name",
+            "description": "The first name of a name entity",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100,
+            "examples": [
+                "Tom",
+                "Dick",
+                "Harry"
+            ],
+            "isRequired": true
+        },
+        "lastName": {
+            "title": "Last Name",
+            "description": "The last name of a name entity",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100,
+            "examples": [
+                "Smith",
+                "Jones"
+            ],
+            "isRequired": true
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "title",
+        "firstName",
+        "lastName"
+    ]
+}
+```
 
 

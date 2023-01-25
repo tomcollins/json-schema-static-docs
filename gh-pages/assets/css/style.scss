@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+th {
+  background-color: #f8f8f8;
+  text-align: left;
+}
+
 nav {
   position: absolute;
   left: 0px;

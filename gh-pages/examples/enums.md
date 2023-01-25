@@ -1,15 +1,18 @@
 ---
 title: Enum Documentation
-description: JSON schema example demonstrating documentation of enum values.
+description: JSON schema example demonstrating documentation of enum values using the custom meta:enum keyword. This must be enabled using the enableMetaEnum config option.
 
 ---
 # Enum Documentation
 
-<p>JSON schema example demonstrating documentation of enum values.</p>
+<p>JSON schema example demonstrating documentation of enum values using the custom meta:enum keyword. This must be enabled using the enableMetaEnum config option.</p>
 
-
-<p>enum-documentation.yml</p>
-
+<table>
+<tbody>
+<tr><th>$id</th><td>enum-documentation.yml</td></tr>
+<tr><th>$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
+</tbody>
+</table>
 
 ## Properties
 
@@ -64,5 +67,43 @@ description: JSON schema example demonstrating documentation of enum values.
 
 
 
+
+## Schema
+```
+{
+    "$id": "enum-documentation.yml",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Enum Documentation",
+    "description": "JSON schema example demonstrating documentation of enum values using the custom meta:enum keyword. This must be enabled using the enableMetaEnum config option.",
+    "type": "object",
+    "examples": [
+        {
+            "status": "Active"
+        }
+    ],
+    "properties": {
+        "status": {
+            "title": "Status",
+            "description": "The status of something",
+            "type": "string",
+            "enum": [
+                "Active",
+                "Suspended",
+                "Terminated"
+            ],
+            "meta:enum": {
+                "Active": "The thing is currently active and in use",
+                "Suspended": "The thing is currently suspended and may later become Active or Terminated",
+                "Deleted": "The thing has been permanently terminated"
+            },
+            "isRequired": true
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "status"
+    ]
+}
+```
 
 
