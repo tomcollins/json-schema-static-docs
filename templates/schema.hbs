@@ -2,9 +2,12 @@
 
 {{#if schema.title}}{{#if schema.description}}<p>{{ schema.description }}</p>{{/if}}{{/if}}
 
-{{#if schema.id}}<p>{{ schema.id }}</p>{{/if}}
-{{#if schema.$id}}<p>{{ schema.$id }}</p>{{/if}}
-
+<table>
+<tbody>
+{{#if schema.$id}}<tr><th>$id</th><td>{{ schema.$id }}</td></tr>{{/if}}
+{{#if schema.$schema}}<tr><th>$schema</th><td>{{ schema.$schema }}</td></tr>{{/if}}
+</tbody>
+</table>
 
 ## Properties
 
@@ -71,9 +74,23 @@
 {{/if}}
 {{/each}}
 {{/if}}
+{{#if this.items }}
+{{#each this.items.properties}}
+{{#if (isDefined ../parentKey)}}
+{{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
+{{else}}
+{{> property parentKey=../propertyKey propertyKey=@key }}
+{{/if}}
+{{/each}}
+{{/if}}
 {{/unless}}
 
 {{/inline}}
+
+## Schema
+```
+{{{json schema}}}
+```
 
 
 {{#*inline "propertyTable"}}

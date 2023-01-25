@@ -7,15 +7,25 @@ description: A schema demonstrating some draft 07 features
 
 <p>A schema demonstrating some draft 07 features</p>
 
-
-<p>draft-07-user.yml</p>
-
+<table>
+<tbody>
+<tr><th>$id</th><td>draft-07-user.yml</td></tr>
+<tr><th>$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
+</tbody>
+</table>
 
 ## Properties
 
 <table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#username">username</a></td><td>String=seymour_butz</td></tr><tr><td colspan="2"><a href="#password">password</a></td><td>String</td></tr></tbody></table>
 
 
+## Example
+```
+{
+    "username": "seymour_butz",
+    "password": "M0zT4v3rn"
+}
+```
 
 <hr />
 
@@ -41,7 +51,7 @@ description: A schema demonstrating some draft 07 features
     </tr>
     <tr>
       <td>Required</td>
-      <td colspan="2">No</td>
+      <td colspan="2">Yes</td>
     </tr>
     <tr><td>Type</td><td colspan="2">String</td></tr>
     <tr>
@@ -90,5 +100,43 @@ description: A schema demonstrating some draft 07 features
 
 
 
+
+## Schema
+```
+{
+    "$id": "draft-07-user.yml",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Draft 07 - User Example",
+    "description": "A schema demonstrating some draft 07 features",
+    "examples": [
+        {
+            "username": "seymour_butz",
+            "password": "M0zT4v3rn"
+        }
+    ],
+    "required": [
+        "username"
+    ],
+    "type": "object",
+    "properties": {
+        "username": {
+            "type": "string",
+            "title": "Username",
+            "const": "seymour_butz",
+            "readOnly": true,
+            "description": "This is a description",
+            "$comment": "This is a comment",
+            "isRequired": true
+        },
+        "password": {
+            "type": "string",
+            "title": "Password",
+            "writeOnly": true,
+            "description": "A write only password property",
+            "isRequired": false
+        }
+    }
+}
+```
 
 
