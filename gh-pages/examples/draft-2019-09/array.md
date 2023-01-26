@@ -55,12 +55,15 @@ description: A schema describing fruits and vegetables
       <th>Description</th>
       <td colspan="2">An array of fruit names</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Array</td></tr>
-    
+    <tr>
+      <th>Contains</th>
+      <td colspan="2">Type: string</td>
+    </tr>
   </tbody>
 </table>
 
@@ -82,11 +85,11 @@ description: A schema describing fruits and vegetables
       <th>Description</th>
       <td colspan="2">An array vegetable objects</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Array</td></tr>
     
   </tbody>
 </table>
@@ -141,6 +144,9 @@ description: A schema describing fruits and vegetables
 
 
 
+
+<hr />
+
 ## Schema
 ```
 {
@@ -173,33 +179,15 @@ description: A schema describing fruits and vegetables
             "type": "array",
             "contains": {
                 "type": "string"
-            },
-            "isRequired": false
+            }
         },
         "vegetables": {
             "title": "Vegetables",
             "description": "An array vegetable objects",
             "type": "array",
             "items": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "hasARoundShape"
-                ],
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "title": "Name",
-                        "description": "The name of the vegetable."
-                    },
-                    "hasARoundShape": {
-                        "type": "boolean",
-                        "title": "Is round",
-                        "description": "Does this vegetable have a round shape?"
-                    }
-                }
-            },
-            "isRequired": false
+                "$ref": "#/$defs/vegetable"
+            }
         }
     },
     "$defs": {

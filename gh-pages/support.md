@@ -35,15 +35,15 @@ Coverage for [A Vocabulary for Applying Subschemas](https://json-schema.org/draf
 | :---------------------- | :-------- |
 | `additionalItems`       | No        |
 | `additionalProperties`  | Yes       |
-| `allOf`                 | Yes       |
-| `anyOf`                 | Yes       |
-| `contains`              | No        |
+| `oneOf`                 | Yes       |
+| `allOf`                 | No        |
+| `anyOf`                 | No        |
+| `contains`              | Yes       |
 | `dependentSchemas`      | No        |
 | `else`                  | No        |
 | `if`                    | No        |
 | `items`                 | Yes       |
 | `not`                   | No        |
-| `oneOf`                 | Yes       |
 | `patternProperties`     | No        |
 | `properties`            | Yes       |
 | `propertyNames`         | No        |
@@ -89,11 +89,11 @@ Coverage for [Validation Keywords for Arrays](https://json-schema.org/draft/2019
 
 | Keyword       | Supported |
 | :------------ | :-------- |
-| `maxContains` | No        |
-| `maxItems`    | No        |
-| `minContains` | No        |
-| `minItems`    | No        |
-| `uniqueItems` | No        |
+| `maxContains` | Yes       |
+| `maxItems`    | Yes       |
+| `minContains` | Yes       |
+| `minItems`    | Yes       |
+| `uniqueItems` | Yes       |
 
 ## Validation Keywords for Objects
 
@@ -102,8 +102,8 @@ Coverage for [Validation Keywords for Objects](https://json-schema.org/draft/201
 | Keyword             | Supported |
 | :------------------ | :-------- |
 | `dependentRequired` | No        |
-| `maxProperties`     | No        |
-| `minProperties`     | No        |
+| `maxProperties`     | Yes       |
+| `minProperties`     | Yes       |
 | `required`          | Yes       |
 
 ## Defined Formats
@@ -148,10 +148,10 @@ Coverage for [A Vocabulary for Basic Meta-Data Annotations](https://json-schema.
 
 | Keyword       | Supported |
 | :------------ | :-------- |
-| `default`     | No        |
-| `deprecated`  | No        |
+| `default`     | Yes       |
+| `deprecated`  | Yes       |
 | `description` | Yes       |
 | `examples`    | Yes       |
-| `readOnly`    | No        |
+| `readOnly`    | Yes       |
 | `title`       | Yes       |
-| `writeOnly`   | No        |
+| `writeOnly`   | Yes       |

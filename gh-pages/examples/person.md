@@ -90,11 +90,11 @@ description: JSON schema example for a person entity
       <th>Description</th>
       <td colspan="2">JSON schema example for a name entity</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">Object (of type <a href="./name.html">Name</a>)</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Object (of type <a href="./name.html">Name</a>)</td></tr>
     
   </tbody>
 </table>
@@ -119,14 +119,17 @@ description: JSON schema example for a person entity
       <th>Description</th>
       <td colspan="2">The date at which a person was born.</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Format</th>
       <td colspan="2">date</td>
+    </tr><tr>
+      <th>Examples</th>
+      <td colspan="2"><li>Fri Oct 23 1992 01:00:00 GMT+0100 (British Summer Time)</li></td>
     </tr>
   </tbody>
 </table>
@@ -149,11 +152,11 @@ description: JSON schema example for a person entity
       <th>Description</th>
       <td colspan="2">The address at which a person lives.</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Object</td></tr>
     
   </tbody>
 </table>
@@ -174,10 +177,6 @@ description: JSON schema example for a person entity
     <tr>
       <th>Description</th>
       <td colspan="2">The house number at which an address is located.</td>
-    </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
@@ -206,10 +205,6 @@ description: JSON schema example for a person entity
       <th>Description</th>
       <td colspan="2">The street in which an address is located.</td>
     </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Min Length</th>
@@ -236,10 +231,6 @@ description: JSON schema example for a person entity
     <tr>
       <th>Description</th>
       <td colspan="2">The city in which an address is located.</td>
-    </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
@@ -268,10 +259,6 @@ description: JSON schema example for a person entity
       <th>Description</th>
       <td colspan="2">How long the person has lived at this address.</td>
     </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
     <tr><th>Type</th><td colspan="2">Object</td></tr>
     
   </tbody>
@@ -294,6 +281,9 @@ description: JSON schema example for a person entity
     </tr>
     <tr><th>Type</th><td colspan="2">Number</td></tr>
     <tr>
+      <th>Minimum</th>
+      <td colspan="2">1</td>
+    </tr><tr>
       <th>Minimum</th>
       <td colspan="2">1</td>
     </tr><tr>
@@ -324,6 +314,9 @@ description: JSON schema example for a person entity
       <th>Minimum</th>
       <td colspan="2">1</td>
     </tr><tr>
+      <th>Minimum</th>
+      <td colspan="2">1</td>
+    </tr><tr>
       <th>Maximum</th>
       <td colspan="2">12</td>
     </tr>
@@ -339,6 +332,7 @@ description: JSON schema example for a person entity
 
 ## friends
 
+  <p>Defined in <a href="./name.html">./name.yml</a></p>
 
 <table>
   <tbody>
@@ -350,103 +344,17 @@ description: JSON schema example for a person entity
       <th>Description</th>
       <td colspan="2">An array containing the names of a person&#x27;s friends.</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">Array [<a href="./name.html">Name</a>]</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Array [<a href="./name.html">Name</a>]</td></tr>
     
   </tbody>
 </table>
 
 
 
-### friends.title
-
-
-<table>
-  <tbody>
-    <tr>
-      <th>Title</th>
-      <td colspan="2">Title</td>
-    </tr>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The title of a name entity</td>
-    </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Enum</th>
-      <td colspan="2"><ul><li>Mr</li><li>Mrs</li><li>Miss</li></ul></td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-
-### friends.firstName
-
-
-<table>
-  <tbody>
-    <tr>
-      <th>Title</th>
-      <td colspan="2">First Name</td>
-    </tr>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The first name of a name entity</td>
-    </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Min Length</th>
-      <td colspan="2">3</td>
-    </tr><tr>
-      <th>Max Length</th>
-      <td colspan="2">100</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-
-### friends.lastName
-
-
-<table>
-  <tbody>
-    <tr>
-      <th>Title</th>
-      <td colspan="2">Last Name</td>
-    </tr>
-    <tr>
-      <th>Description</th>
-      <td colspan="2">The last name of a name entity</td>
-    </tr>
-    <tr>
-      <th>Required</th>
-      <td colspan="2">No</td>
-    </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
-    <tr>
-      <th>Min Length</th>
-      <td colspan="2">3</td>
-    </tr><tr>
-      <th>Max Length</th>
-      <td colspan="2">100</td>
-    </tr>
-  </tbody>
-</table>
 
 
 
@@ -454,8 +362,7 @@ description: JSON schema example for a person entity
 
 
 
-
-
+<hr />
 
 ## Schema
 ```
@@ -472,7 +379,7 @@ description: JSON schema example for a person entity
                 "firstName": "Seymour",
                 "lastName": "Butts"
             },
-            "dateOfBirth": "1980-01-01T00:00:00.000Z",
+            "dateOfBirth": "1980-01-01",
             "address": {
                 "houseNumber": 41,
                 "street": "Some street",
@@ -489,7 +396,7 @@ description: JSON schema example for a person entity
                 "firstName": "Jane",
                 "lastName": "Smith"
             },
-            "dateOfBirth": "1980-01-01T00:00:00.000Z",
+            "dateOfBirth": "1980-01-01",
             "address": {
                 "houseNumber": 310,
                 "street": "Any street",
@@ -511,64 +418,7 @@ description: JSON schema example for a person entity
     ],
     "properties": {
         "name": {
-            "$id": "name.yml",
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "Name",
-            "description": "JSON schema example for a name entity",
-            "type": "object",
-            "examples": [
-                {
-                    "title": "Mr",
-                    "firstName": "Seymour",
-                    "lastName": "Butts"
-                }
-            ],
-            "properties": {
-                "title": {
-                    "title": "Title",
-                    "description": "The title of a name entity",
-                    "type": "string",
-                    "enum": [
-                        "Mr",
-                        "Mrs",
-                        "Miss"
-                    ],
-                    "isRequired": false
-                },
-                "firstName": {
-                    "title": "First Name",
-                    "description": "The first name of a name entity",
-                    "type": "string",
-                    "minLength": 3,
-                    "maxLength": 100,
-                    "examples": [
-                        "Tom",
-                        "Dick",
-                        "Harry"
-                    ],
-                    "isRequired": false
-                },
-                "lastName": {
-                    "title": "Last Name",
-                    "description": "The last name of a name entity",
-                    "type": "string",
-                    "minLength": 3,
-                    "maxLength": 100,
-                    "examples": [
-                        "Smith",
-                        "Jones"
-                    ],
-                    "isRequired": false
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "title",
-                "firstName",
-                "lastName"
-            ],
-            "$ref": "./name.yml",
-            "isRequired": true
+            "$ref": "./name.yml"
         },
         "dateOfBirth": {
             "title": "Date of birth",
@@ -576,9 +426,8 @@ description: JSON schema example for a person entity
             "type": "string",
             "format": "date",
             "examples": [
-                "1992-10-23T00:00:00.000Z"
-            ],
-            "isRequired": true
+                "1992-10-23"
+            ]
         },
         "address": {
             "title": "Address",
@@ -590,24 +439,21 @@ description: JSON schema example for a person entity
                     "description": "The house number at which an address is located.",
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 10,
-                    "isRequired": false
+                    "maxLength": 10
                 },
                 "street": {
                     "title": "Street",
                     "description": "The street in which an address is located.",
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 250,
-                    "isRequired": false
+                    "maxLength": 250
                 },
                 "city": {
                     "title": "City",
                     "description": "The city in which an address is located.",
                     "type": "string",
                     "minLength": 1,
-                    "maxLength": 250,
-                    "isRequired": false
+                    "maxLength": 250
                 },
                 "timeAtAddress": {
                     "title": "Time at address",
@@ -628,8 +474,7 @@ description: JSON schema example for a person entity
                             "minimum": 1,
                             "maximum": 12
                         }
-                    },
-                    "isRequired": false
+                    }
                 }
             },
             "required": [
@@ -637,74 +482,15 @@ description: JSON schema example for a person entity
                 "street",
                 "city"
             ],
-            "additionalProperties": false,
-            "isRequired": true
+            "additionalProperties": false
         },
         "friends": {
             "title": "Friends",
             "description": "An array containing the names of a person's friends.",
             "type": "array",
             "items": {
-                "$id": "name.yml",
-                "$schema": "http://json-schema.org/draft-07/schema#",
-                "title": "Name",
-                "description": "JSON schema example for a name entity",
-                "type": "object",
-                "examples": [
-                    {
-                        "title": "Mr",
-                        "firstName": "Seymour",
-                        "lastName": "Butts"
-                    }
-                ],
-                "properties": {
-                    "title": {
-                        "title": "Title",
-                        "description": "The title of a name entity",
-                        "type": "string",
-                        "enum": [
-                            "Mr",
-                            "Mrs",
-                            "Miss"
-                        ],
-                        "isRequired": false
-                    },
-                    "firstName": {
-                        "title": "First Name",
-                        "description": "The first name of a name entity",
-                        "type": "string",
-                        "minLength": 3,
-                        "maxLength": 100,
-                        "examples": [
-                            "Tom",
-                            "Dick",
-                            "Harry"
-                        ],
-                        "isRequired": false
-                    },
-                    "lastName": {
-                        "title": "Last Name",
-                        "description": "The last name of a name entity",
-                        "type": "string",
-                        "minLength": 3,
-                        "maxLength": 100,
-                        "examples": [
-                            "Smith",
-                            "Jones"
-                        ],
-                        "isRequired": false
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "title",
-                    "firstName",
-                    "lastName"
-                ],
-                "$ref": "./name.yml",
-                "isRequired": true
-            },
-            "isRequired": false
+                "$ref": "./name.yml"
+            }
         }
     },
     "additionalProperties": false,

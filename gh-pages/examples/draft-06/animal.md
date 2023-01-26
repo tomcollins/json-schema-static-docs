@@ -47,11 +47,11 @@ description: A schema demonstrating some draft 06 features
       <th>Title</th>
       <td colspan="2">Animal Type</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
     
   </tbody>
 </table>
@@ -70,11 +70,11 @@ description: A schema demonstrating some draft 06 features
       <th>Title</th>
       <td colspan="2">Can Fly</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
     
   </tbody>
 </table>
@@ -86,6 +86,9 @@ description: A schema demonstrating some draft 06 features
 
 
 
+
+
+<hr />
 
 ## Schema
 ```
@@ -112,13 +115,11 @@ description: A schema demonstrating some draft 06 features
     "properties": {
         "animalType": {
             "type": "string",
-            "title": "Animal Type",
-            "isRequired": true
+            "title": "Animal Type"
         },
         "canFly": {
             "type": "boolean",
-            "title": "Can Fly",
-            "isRequired": true
+            "title": "Can Fly"
         }
     }
 }
