@@ -52,9 +52,6 @@
   <p>Defined in {{{ refToLink this.$ref this.$ref }}}</p>
 {{/if}}
 
-
-{{#if this.description}}<p>{{ this.description }}</p>{{/if}}
-
 {{> propertyTable}}
 
 {{#unless (isDefined parentKey)}}
@@ -83,6 +80,15 @@
 {{/if}}
 {{/each}}
 {{/if}}
+{{#if this.oneOf }}
+{{#each this.oneOf}}
+{{#if (isDefined ../parentKey)}}
+{{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
+{{else}}
+{{> property parentKey=../propertyKey propertyKey=@key }}
+{{/if}}
+{{/each}}
+{{/if}}
 {{/unless}}
 
 {{/inline}}
@@ -95,58 +101,70 @@
 
 {{#*inline "propertyTable"}}
 <table>
-  <thead>
+  {{!-- <thead>
     <tr>
-      <th>Property</th>
+      <th>Attribute</th>
       <th colspan="2">Value</th>
     </tr>
-  </thead>
+  </thead> --}}
   <tbody>
+    {{#if this.$id}}
+    <tr>
+      <th>$id</th>
+      <td colspan="2">{{ this.$id }}</td>
+    </tr>
+    {{/if}}
     {{#if this.title}}
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">{{ this.title }}</td>
+    </tr>
+    {{/if}}
+    {{#if this.description}}
+    <tr>
+      <th>Description</th>
+      <td colspan="2">{{ this.description }}</td>
     </tr>
     {{/if}}
     {{#if (isDefined this.isRequired)}}
     <tr>
-      <td>Required</td>
+      <th>Required</th>
       <td colspan="2">{{#if this.isRequired}}Yes{{else}}No{{/if}}</td>
     </tr>
     {{/if}}
     {{propertyTypeRow this }}
     {{#if this.const}}<tr>
-      <td>Const</td>
+      <th>Const</th>
       <td colspan="2">{{this.const}}</td>
     </tr>{{/if}}{{#if this.enum}}<tr>
-      <td>Enum</td>
+      <th>Enum</th>
       <td colspan="2">{{#if this.meta:enum}}<dl>{{#each this.meta:enum}}<dt>{{@key}}</dt><dd>{{this}}</dd>{{/each}}</dl>{{else}}{{enumValues this.enum}}{{/if}}</td>
     </tr>{{/if}}{{#if this.minLength}}<tr>
-      <td>Min Length</td>
+      <th>Min Length</th>
       <td colspan="2">{{this.minLength}}</td>
     </tr>{{/if}}{{#if this.maxLength}}<tr>
-      <td>Max Length</td>
+      <th>Max Length</th>
       <td colspan="2">{{this.maxLength}}</td>
     </tr>{{/if}}{{#if this.minimum}}<tr>
-      <td>Minimum</td>
+      <th>Minimum</th>
       <td colspan="2">{{this.minimum}}</td>
     </tr>{{/if}}{{#if this.exclusiveMinimum}}<tr>
-      <td>Exclusive Minimum</td>
+      <th>Exclusive Minimum</th>
       <td colspan="2">{{this.exclusiveMinimum}}</td>
     </tr>{{/if}}{{#if this.maximum}}<tr>
-      <td>Maximum</td>
+      <th>Maximum</th>
       <td colspan="2">{{this.maximum}}</td>
     </tr>{{/if}}{{#if this.exclusiveMaximum}}<tr>
-      <td>Exclusive Maximum</td>
+      <th>Exclusive Maximum</th>
       <td colspan="2">{{this.exclusiveMaximum}}</td>
     </tr>{{/if}}{{#if this.multipleOf}}<tr>
-      <td>Multiple Of</td>
+      <th>Multiple Of</th>
       <td colspan="2">{{this.multipleOf}}</td>
     </tr>{{/if}}{{#if this.format}}<tr>
-      <td>Format</td>
+      <th>Format</th>
       <td colspan="2">{{this.format}}</td>
     </tr>{{/if}}{{#if this.pattern}}<tr>
-      <td>Pattern</td>
+      <th>Pattern</th>
       <td colspan="2">{{this.pattern}}</td>
     </tr>{{/if}}
   </tbody>

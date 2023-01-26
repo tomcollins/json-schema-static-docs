@@ -45,26 +45,21 @@ description: A schema describing fruits and vegetables
 ## fruits
 
 
-
-<p>An array of fruit names</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Fruits</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">An array of fruit names</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">Array</td></tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
     
   </tbody>
 </table>
@@ -77,26 +72,21 @@ description: A schema describing fruits and vegetables
 ## vegetables
 
 
-
-<p>An array vegetable objects</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Vegetables</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">An array vegetable objects</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">Array</td></tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
     
   </tbody>
 </table>
@@ -106,22 +96,17 @@ description: A schema describing fruits and vegetables
 ### vegetables.name
 
 
-
-<p>The name of the vegetable.</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Name</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The name of the vegetable.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     
   </tbody>
 </table>
@@ -132,22 +117,17 @@ description: A schema describing fruits and vegetables
 ### vegetables.hasARoundShape
 
 
-
-<p>Does this vegetable have a round shape?</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Is round</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">Boolean</td></tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Does this vegetable have a round shape?</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
     
   </tbody>
 </table>

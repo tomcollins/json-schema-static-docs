@@ -33,28 +33,23 @@ description: JSON schema example demonstrating documentation of enum values usin
 ## status
 
 
-
-<p>The status of something</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Status</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">The status of something</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
-      <td>Enum</td>
+      <th>Enum</th>
       <td colspan="2"><dl><dt>Active</dt><dd>The thing is currently active and in use</dd><dt>Suspended</dt><dd>The thing is currently suspended and may later become Active or Terminated</dd><dt>Deleted</dt><dd>The thing has been permanently terminated</dd></dl></td>
     </tr>
   </tbody>

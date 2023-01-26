@@ -41,26 +41,17 @@ description: A schema demonstrating some draft 06 features
 ## animalType
 
 
-
-
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Animal Type</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     
   </tbody>
 </table>
@@ -73,26 +64,17 @@ description: A schema demonstrating some draft 06 features
 ## canFly
 
 
-
-
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Can Fly</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">Boolean</td></tr>
+    <tr><th>Type</th><td colspan="2">Boolean</td></tr>
     
   </tbody>
 </table>

@@ -142,19 +142,19 @@ test("renders nested property title correctly", async () => {
   result = removeFormatting(result);
 
   let expectedText =
-    '<tr><td>Title</td><td colspan="2">Property 5</td></tr>' +
-    '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
-    '<tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>' +
+    '<tr><th>Title</th><td colspan="2">Property 5</td></tr>' +
+    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
+    '<tr><th>Type</th><td colspan="2">Object</td></tr></tbody></table>' +
     "### Properties" +
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property5property5.1">property5.1</a></td><td>Object</td></tr>' +
     "</tbody></table>" +
     "### property5.property5.1" +
-    '<table><thead><tr><th>Property</th><th colspan="2">Value</th></tr></thead>' +
-    '<tbody><tr><td>Type</td><td colspan="2">Object</td></tr></tbody></table>' +
+    "<table>" +
+    '<tbody><tr><th>Type</th><td colspan="2">Object</td></tr></tbody></table>' +
     "### property5.property5.1.property5.1.1" +
-    '<table><thead><tr><th>Property</th><th colspan="2">Value</th></tr></thead><tbody>' +
-    '<tr><td>Type</td><td colspan="2">String</td></tr></tbody></table>';
+    "<table><tbody>" +
+    '<tr><th>Type</th><td colspan="2">String</td></tr></tbody></table>';
 
   expect(result).toContain(expectedText);
 });
@@ -169,10 +169,10 @@ test("renders string property enums", async () => {
   result = removeFormatting(result);
 
   let expectedText =
-    '<tr><td>Title</td><td colspan="2">Property 1</td></tr>' +
-    '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
-    '<tr><td>Type</td><td colspan="2">String</td></tr>' +
-    '<tr><td>Enum</td><td colspan="2"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
+    '<tr><th>Title</th><td colspan="2">Property 1</td></tr>' +
+    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
+    '<tr><th>Type</th><td colspan="2">String</td></tr>' +
+    '<tr><th>Enum</th><td colspan="2"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
 
   expect(result).toContain(expectedText);
 });
@@ -187,10 +187,10 @@ test("renders string property enums with meta description", async () => {
   result = removeFormatting(result);
 
   let expectedText =
-    '<tr><td>Title</td><td colspan="2">Property 4</td></tr>' +
-    '<tr><td>Required</td><td colspan="2">Yes</td></tr>' +
-    '<tr><td>Type</td><td colspan="2">String</td></tr>' +
-    '<tr><td>Enum</td><td colspan="2"><dl><dt>42</dt><dd>Description for 42</dd><dt>foo</dt><dd>Description for foo</dd></dl></td></tr>';
+    '<tr><th>Title</th><td colspan="2">Property 4</td></tr>' +
+    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
+    '<tr><th>Type</th><td colspan="2">String</td></tr>' +
+    '<tr><th>Enum</th><td colspan="2"><dl><dt>42</dt><dd>Description for 42</dd><dt>foo</dt><dd>Description for foo</dd></dl></td></tr>';
 
   expect(result).toContain(expectedText);
 });
@@ -206,9 +206,9 @@ test("renders string property with const", async () => {
   result = removeFormatting(result);
 
   let expectedText =
-    '<tr><td>Title</td><td colspan="2">Property 1</td></tr>' +
-    '<tr><td>Type</td><td colspan="2">String</td></tr>' +
-    '<tr><td>Const</td><td colspan="2">foo</td></tr>';
+    '<tr><th>Title</th><td colspan="2">Property 1</td></tr>' +
+    '<tr><th>Type</th><td colspan="2">String</td></tr>' +
+    '<tr><th>Const</th><td colspan="2">foo</td></tr>';
 
   expect(result).toContain(expectedText);
 });
@@ -222,11 +222,11 @@ test("renders array property types", async () => {
   result = result.match(/## property3(.*\n)*/)[0];
   result = removeFormatting(result);
 
-  let expectedTitle = '<tr><td>Title</td><td colspan="2">Property 3</td></tr>';
+  let expectedTitle = '<tr><th>Title</th><td colspan="2">Property 3</td></tr>';
   expect(result).toEqual(expect.stringContaining(expectedTitle));
 
   let expectedType =
-    '<tr><td>Type</td><td colspan="2">Array [<a href="property3.html">Property3.html</a>]</td></tr>';
+    '<tr><th>Type</th><td colspan="2">Array [<a href="property3.html">Property3.html</a>]</td></tr>';
 
   expect(result).toContain(expectedType);
 });
