@@ -35,28 +35,23 @@ description: JSON schema example for a name entity
 ## title
 
 
-
-<p>The title of a name entity</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Title</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">The title of a name entity</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
-      <td>Enum</td>
+      <th>Enum</th>
       <td colspan="2"><ul><li>Mr</li><li>Mrs</li><li>Miss</li></ul></td>
     </tr>
   </tbody>
@@ -70,31 +65,26 @@ description: JSON schema example for a name entity
 ## firstName
 
 
-
-<p>The first name of a name entity</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">First Name</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">The first name of a name entity</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
-      <td>Min Length</td>
+      <th>Min Length</th>
       <td colspan="2">3</td>
     </tr><tr>
-      <td>Max Length</td>
+      <th>Max Length</th>
       <td colspan="2">100</td>
     </tr>
   </tbody>
@@ -108,31 +98,26 @@ description: JSON schema example for a name entity
 ## lastName
 
 
-
-<p>The last name of a name entity</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Last Name</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">The last name of a name entity</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
-      <td>Min Length</td>
+      <th>Min Length</th>
       <td colspan="2">3</td>
     </tr><tr>
-      <td>Max Length</td>
+      <th>Max Length</th>
       <td colspan="2">100</td>
     </tr>
   </tbody>

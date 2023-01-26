@@ -34,28 +34,23 @@ description: A schema demonstrating some draft 07 features
 ## username
 
 
-
-<p>This is a description</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Username</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">This is a description</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
-      <td>Const</td>
+      <th>Const</th>
       <td colspan="2">seymour_butz</td>
     </tr>
   </tbody>
@@ -69,26 +64,21 @@ description: A schema demonstrating some draft 07 features
 ## password
 
 
-
-<p>A write only password property</p>
-
 <table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th colspan="2">Value</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
-      <td>Title</td>
+      <th>Title</th>
       <td colspan="2">Password</td>
     </tr>
     <tr>
-      <td>Required</td>
+      <th>Description</th>
+      <td colspan="2">A write only password property</td>
+    </tr>
+    <tr>
+      <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><td>Type</td><td colspan="2">String</td></tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     
   </tbody>
 </table>
