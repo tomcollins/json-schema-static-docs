@@ -143,8 +143,9 @@ test("renders nested property title correctly", async () => {
 
   let expectedText =
     '<tr><th>Title</th><td colspan="2">Property 5</td></tr>' +
+    '<tr><th>Type</th><td colspan="2">Object</td></tr>' +
     '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
-    '<tr><th>Type</th><td colspan="2">Object</td></tr></tbody></table>' +
+    "</tbody></table>" +
     "### Properties" +
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property5property5.1">property5.1</a></td><td>Object</td></tr>' +
@@ -170,8 +171,8 @@ test("renders string property enums", async () => {
 
   let expectedText =
     '<tr><th>Title</th><td colspan="2">Property 1</td></tr>' +
-    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
     '<tr><th>Type</th><td colspan="2">String</td></tr>' +
+    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
     '<tr><th>Enum</th><td colspan="2"><ul><li>foo</li><li>bar</li><li>42</li><li>null</li></ul></td></tr>';
 
   expect(result).toContain(expectedText);
@@ -188,8 +189,8 @@ test("renders string property enums with meta description", async () => {
 
   let expectedText =
     '<tr><th>Title</th><td colspan="2">Property 4</td></tr>' +
-    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
     '<tr><th>Type</th><td colspan="2">String</td></tr>' +
+    '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
     '<tr><th>Enum</th><td colspan="2"><dl><dt>42</dt><dd>Description for 42</dd><dt>foo</dt><dd>Description for foo</dd></dl></td></tr>';
 
   expect(result).toContain(expectedText);

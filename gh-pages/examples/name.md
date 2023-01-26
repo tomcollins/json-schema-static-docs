@@ -45,11 +45,15 @@ description: JSON schema example for a name entity
       <th>Description</th>
       <td colspan="2">The title of a name entity</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Default</th>
+      <td colspan="2">Mr</td>
+    </tr>
     <tr>
       <th>Enum</th>
       <td colspan="2"><ul><li>Mr</li><li>Mrs</li><li>Miss</li></ul></td>
@@ -75,17 +79,20 @@ description: JSON schema example for a name entity
       <th>Description</th>
       <td colspan="2">The first name of a name entity</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Min Length</th>
       <td colspan="2">3</td>
     </tr><tr>
       <th>Max Length</th>
       <td colspan="2">100</td>
+    </tr><tr>
+      <th>Examples</th>
+      <td colspan="2"><li>Tom</li><li>Dick</li><li>Harry</li></td>
     </tr>
   </tbody>
 </table>
@@ -108,17 +115,20 @@ description: JSON schema example for a name entity
       <th>Description</th>
       <td colspan="2">The last name of a name entity</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Min Length</th>
       <td colspan="2">3</td>
     </tr><tr>
       <th>Max Length</th>
       <td colspan="2">100</td>
+    </tr><tr>
+      <th>Examples</th>
+      <td colspan="2"><li>Smith</li><li>Jones</li></td>
     </tr>
   </tbody>
 </table>
@@ -130,6 +140,9 @@ description: JSON schema example for a name entity
 
 
 
+
+
+<hr />
 
 ## Schema
 ```
@@ -151,12 +164,12 @@ description: JSON schema example for a name entity
             "title": "Title",
             "description": "The title of a name entity",
             "type": "string",
+            "default": "Mr",
             "enum": [
                 "Mr",
                 "Mrs",
                 "Miss"
-            ],
-            "isRequired": true
+            ]
         },
         "firstName": {
             "title": "First Name",
@@ -168,8 +181,7 @@ description: JSON schema example for a name entity
                 "Tom",
                 "Dick",
                 "Harry"
-            ],
-            "isRequired": true
+            ]
         },
         "lastName": {
             "title": "Last Name",
@@ -180,8 +192,7 @@ description: JSON schema example for a name entity
             "examples": [
                 "Smith",
                 "Jones"
-            ],
-            "isRequired": true
+            ]
         }
     },
     "additionalProperties": false,

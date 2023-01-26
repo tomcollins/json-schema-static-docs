@@ -44,11 +44,15 @@ description: A schema demonstrating some draft 07 features
       <th>Description</th>
       <td colspan="2">This is a description</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Read Only</th>
+      <td colspan="2">true</td>
+    </tr>
     <tr>
       <th>Const</th>
       <td colspan="2">seymour_butz</td>
@@ -74,11 +78,15 @@ description: A schema demonstrating some draft 07 features
       <th>Description</th>
       <td colspan="2">A write only password property</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">No</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Write Only</th>
+      <td colspan="2">true</td>
+    </tr>
     
   </tbody>
 </table>
@@ -90,6 +98,9 @@ description: A schema demonstrating some draft 07 features
 
 
 
+
+
+<hr />
 
 ## Schema
 ```
@@ -115,15 +126,13 @@ description: A schema demonstrating some draft 07 features
             "const": "seymour_butz",
             "readOnly": true,
             "description": "This is a description",
-            "$comment": "This is a comment",
-            "isRequired": true
+            "$comment": "This is a comment"
         },
         "password": {
             "type": "string",
             "title": "Password",
             "writeOnly": true,
-            "description": "A write only password property",
-            "isRequired": false
+            "description": "A write only password property"
         }
     }
 }

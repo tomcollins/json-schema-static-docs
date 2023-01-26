@@ -12,6 +12,7 @@ properties:
     title: Title
     description: The title of a name entity
     type: string
+    default: Mr
     enum:
       - Mr
       - Mrs

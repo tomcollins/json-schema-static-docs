@@ -69,6 +69,7 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 | ajvOptions     | Options to pass to [AJV](https://ajv.js.org/) | {}                 |
 | enableMetaEnum | Allow documentation of enum values            | false              |
 | addFrontMatter | Add front matter to generated documentation   | false              |
+| displaySchema  | Display schema JSON in output                 | true               |
 
 ## Markdown Front Matter
 

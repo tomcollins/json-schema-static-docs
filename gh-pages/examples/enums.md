@@ -43,11 +43,11 @@ description: JSON schema example demonstrating documentation of enum values usin
       <th>Description</th>
       <td colspan="2">The status of something</td>
     </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
     </tr>
-    <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
       <th>Enum</th>
       <td colspan="2"><dl><dt>Active</dt><dd>The thing is currently active and in use</dd><dt>Suspended</dt><dd>The thing is currently suspended and may later become Active or Terminated</dd><dt>Deleted</dt><dd>The thing has been permanently terminated</dd></dl></td>
@@ -62,6 +62,9 @@ description: JSON schema example demonstrating documentation of enum values usin
 
 
 
+
+
+<hr />
 
 ## Schema
 ```
@@ -90,8 +93,7 @@ description: JSON schema example demonstrating documentation of enum values usin
                 "Active": "The thing is currently active and in use",
                 "Suspended": "The thing is currently suspended and may later become Active or Terminated",
                 "Deleted": "The thing has been permanently terminated"
-            },
-            "isRequired": true
+            }
         }
     },
     "additionalProperties": false,
