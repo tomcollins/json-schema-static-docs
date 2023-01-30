@@ -72,6 +72,7 @@
 {{/each}}
 {{/if}}
 {{#if this.items }}
+{{#unless (isDefined this.items.$ref)}}
 {{#each this.items.properties}}
 {{#if (isDefined ../parentKey)}}
 {{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
@@ -79,6 +80,7 @@
 {{> property parentKey=../propertyKey propertyKey=@key }}
 {{/if}}
 {{/each}}
+{{/unless}}
 {{/if}}
 {{#if this.oneOf }}
 {{#each this.oneOf}}
