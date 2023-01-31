@@ -27,7 +27,7 @@ description: JSON schema example for a person entity
         "firstName": "Seymour",
         "lastName": "Butts"
     },
-    "dateOfBirth": "1980-01-01T00:00:00.000Z",
+    "dateOfBirth": "1980-01-01",
     "address": {
         "houseNumber": 41,
         "street": "Some street",
@@ -47,7 +47,7 @@ description: JSON schema example for a person entity
         "firstName": "Jane",
         "lastName": "Smith"
     },
-    "dateOfBirth": "1980-01-01T00:00:00.000Z",
+    "dateOfBirth": "1980-01-01",
     "address": {
         "houseNumber": 310,
         "street": "Any street",
@@ -129,7 +129,7 @@ description: JSON schema example for a person entity
       <td colspan="2">date</td>
     </tr><tr>
       <th>Examples</th>
-      <td colspan="2"><li>Fri Oct 23 1992 01:00:00 GMT+0100 (British Summer Time)</li></td>
+      <td colspan="2"><li>1992-10-23</li></td>
     </tr>
   </tbody>
 </table>
@@ -180,6 +180,10 @@ description: JSON schema example for a person entity
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
       <th>Min Length</th>
       <td colspan="2">1</td>
     </tr><tr>
@@ -206,6 +210,10 @@ description: JSON schema example for a person entity
       <td colspan="2">The street in which an address is located.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
     <tr>
       <th>Min Length</th>
       <td colspan="2">1</td>
@@ -234,6 +242,10 @@ description: JSON schema example for a person entity
     </tr>
     <tr><th>Type</th><td colspan="2">String</td></tr>
     <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
       <th>Min Length</th>
       <td colspan="2">1</td>
     </tr><tr>
@@ -260,6 +272,10 @@ description: JSON schema example for a person entity
       <td colspan="2">How long the person has lived at this address.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
     
   </tbody>
 </table>
@@ -280,6 +296,10 @@ description: JSON schema example for a person entity
       <td colspan="2">The number of years lived at this address.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Number</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
     <tr>
       <th>Minimum</th>
       <td colspan="2">1</td>
@@ -310,6 +330,10 @@ description: JSON schema example for a person entity
       <td colspan="2">The number of months lived at this address.</td>
     </tr>
     <tr><th>Type</th><td colspan="2">Integer</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
     <tr>
       <th>Minimum</th>
       <td colspan="2">1</td>
