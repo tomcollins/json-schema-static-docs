@@ -11,6 +11,7 @@ This library generates human friendly static markdown documents based on a set o
 ## Features
 
 - quickly generate static documentation with optional frontmatter
+- generates an index of documents
 - able to display nested properties and objects
 - describes array item schema
 - displays examples for schema and properties
@@ -47,8 +48,8 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 
 (async () => {
   let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-    inputPath: "./schema",
-    outputPath: "./docs",
+    inputPath: "schema",
+    outputPath: "docs",
     ajvOptions: {
       allowUnionTypes: true,
     },
@@ -65,11 +66,33 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 | inputPath      | Directory containing your schema              | "schema"           |
 | inputFileGlob  | Glob used to look for schema files            | "\*_/_.{yml,json}" |
 | outputPath     | Where to write documentation files            | "docs"             |
+| createIndex    | Create an index of documents                  | true               |
+| indexPath      | Index file path (relative to outputPath)      | "index.md"         |
+| indexTitle     | Title of the generated index page             | "Index"            |
 | templatePath   | Where to find templates                       | "templates"        |
 | ajvOptions     | Options to pass to [AJV](https://ajv.js.org/) | {}                 |
 | enableMetaEnum | Allow documentation of enum values            | false              |
 | addFrontMatter | Add front matter to generated documentation   | false              |
 | displaySchema  | Display schema JSON in output                 | true               |
+
+## Index Creation
+
+By default a root level index will be created in the specified `outputPath`.
+
+You can see an example of the [here](examples/examples-index.html);
+
+### Customising the index
+
+You can specify a path and title for the index.
+
+```javascript
+let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
+  inputPath: "schema",
+  outputPath: "docs",
+  indexPath: "schema-index.md",
+  indexTitle: "List of schema with custom title",
+});
+```
 
 ## Markdown Front Matter
 
@@ -77,8 +100,8 @@ If you want to include markdown front matter (for Jekyll, Hugo etc) use the `add
 
 ```javascript
 let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-  inputPath: "./schema",
-  outputPath: "./docs",
+  inputPath: "schema",
+  outputPath: "docs",
   addFrontMatter: true,
 });
 await jsonSchemaStaticDocs.generate();
@@ -103,8 +126,8 @@ You will need to enable this feature using the `enableMetaEnum` option:
 
 ```javascript
 let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-  inputPath: "./schema",
-  outputPath: "./docs",
+  inputPath: "schema",
+  outputPath: "docs",
   enableMetaEnum: true,
 });
 await jsonSchemaStaticDocs.generate();
@@ -139,9 +162,9 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 
 (async () => {
   let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-    inputPath: "./schema",
-    outputPath: "./docs",
-    templatePath: "./your-templates/",
+    inputPath: "schema",
+    outputPath: "docs",
+    templatePath: "your-templates/",
   });
   await jsonSchemaStaticDocs.generate();
   console.log("Documents generated.");
