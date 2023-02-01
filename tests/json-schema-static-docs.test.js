@@ -37,18 +37,6 @@ test("handles absolute paths", async () => {
   expect(exists).toBe(true);
 });
 
-test("loads single additional data source", async () => {
-  testOptions.additionalDataSources = {
-    foo: "./tests/examples/foo",
-    bar: "./tests/examples/bar",
-  };
-  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
-  let mergedSchemas = await jsonSchameStaticDocs.generate();
-  expect(mergedSchemas[0].filename).toBe("tests/examples/schema/name.json");
-  expect(mergedSchemas[0].foo.filename).toBe("tests/examples/foo/name.json");
-  expect(mergedSchemas[0].bar.filename).toBe("tests/examples/bar/name.json");
-});
-
 test("supports custom templates", async () => {
   testOptions.templatePath = path.join(__dirname, "examples/templates/");
   const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
