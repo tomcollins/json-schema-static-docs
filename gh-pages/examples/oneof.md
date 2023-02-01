@@ -16,7 +16,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><th rowspan="2">justOne</th><td rowspan="2">One of:</td><td></td></tr><tr><td></td></tr></tbody></table>
+<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><th rowspan="2">justOne</th><td rowspan="2">One of:</td><td>Object</td></tr><tr><td>Object</td></tr></tbody></table>
 
 
 ## Example
@@ -54,7 +54,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
       <th>Description</th>
       <td colspan="2">Property that demonstrates oneOf</td>
     </tr>
-    <tr><tr><th rowspan="2">Type</th><td rowspan="2">One of:</td><td></td></tr><tr><td></td></tr></tr>
+    <tr><tr><th rowspan="2">Type</th><td rowspan="2">One of:</td><td>Object</td></tr><tr><td>Object</td></tr></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>

@@ -105,7 +105,7 @@ test("renders attributes", async () => {
     '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
-    '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">Property3.html</a>]</td></tr>' +
+    '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">property3.html</a>]</td></tr>' +
     '<tr><td colspan="2"><a href="#property4">property4</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property5">property5</a></td><td>Object</td></tr>' +
     "</tbody></table>";
@@ -227,7 +227,7 @@ test("renders array property types", async () => {
   expect(result).toEqual(expect.stringContaining(expectedTitle));
 
   let expectedType =
-    '<tr><th>Type</th><td colspan="2">Array [<a href="property3.html">Property3.html</a>]</td></tr>';
+    '<tr><th>Type</th><td colspan="2">Array [<a href="property3.html">property3.html</a>]</td></tr>';
 
   expect(result).toContain(expectedType);
 });

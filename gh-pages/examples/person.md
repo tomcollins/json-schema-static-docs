@@ -74,7 +74,7 @@ description: JSON schema example for a person entity
 
 ## name
 
-  <p>Defined in <a href="./name.html">./name.yml</a></p>
+  <p>Defined in <a href="./name.html">./name.html</a></p>
 
 <table>
   <tbody>
@@ -356,7 +356,7 @@ description: JSON schema example for a person entity
 
 ## friends
 
-  <p>Defined in <a href="./name.html">./name.yml</a></p>
+  <p>Defined in <a href="./name.html">./name.html</a></p>
 
 <table>
   <tbody>

@@ -49,7 +49,7 @@
 {{/if}}
 
 {{#if (isExternalRef this.$ref)}}
-  <p>Defined in {{{ refToLink this.$ref this.$ref }}}</p>
+  <p>Defined in {{{ getHtmlAnchorForRef this.$ref this.$ref }}}</p>
 {{/if}}
 
 {{> propertyTable}}
