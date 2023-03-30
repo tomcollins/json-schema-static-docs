@@ -13,3 +13,4 @@
 
 ## Draft-2019-09
 - [draft-2019-09/array](draft-2019-09/array.md)
+- [draft-2019-09/deprecated](draft-2019-09/deprecated.md)

@@ -3,6 +3,8 @@ title: Enum Documentation
 description: JSON schema example demonstrating documentation of enum values using the custom meta:enum keyword. This must be enabled using the enableMetaEnum config option.
 
 ---
+
+
 # Enum Documentation
 
 <p>JSON schema example demonstrating documentation of enum values using the custom meta:enum keyword. This must be enabled using the enableMetaEnum config option.</p>
