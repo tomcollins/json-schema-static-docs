@@ -1,3 +1,5 @@
+{{#if schema.deprecated}}<div class="jssd-deprecated">⚠️ This schema has been marked as deprecated.</div>{{/if}}
+
 {{#if schema.title}}# {{ schema.title }}{{else if schema.description}}# {{ schema.description }}{{else}}# {{/if}}
 
 {{#if schema.title}}{{#if schema.description}}<p>{{ schema.description }}</p>{{/if}}{{/if}}
@@ -121,6 +123,12 @@
       <td colspan="2">{{ this.$id }}</td>
     </tr>
     {{/if}}
+    {{#if this.deprecated}}
+    <tr>
+      <th>Deprecated</th>
+      <td colspan="2">{{this.deprecated}}</td>
+    </tr>
+    {{/if}}
     {{#if this.title}}
     <tr>
       <th>Title</th>
@@ -146,12 +154,6 @@
       <td colspan="2">{{this.default}}</td>
     </tr>
     {{/if}}    
-    {{#if this.deprecated}}
-    <tr>
-      <th>Deprecated</th>
-      <td colspan="2">{{this.deprecated}}</td>
-    </tr>
-    {{/if}}
     {{#if this.readOnly}}
     <tr>
       <th>Read Only</th>

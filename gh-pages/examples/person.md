@@ -3,6 +3,8 @@ title: Person
 description: JSON schema example for a person entity
 
 ---
+
+
 # Person
 
 <p>JSON schema example for a person entity</p>

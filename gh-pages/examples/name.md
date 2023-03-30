@@ -3,6 +3,8 @@ title: Name
 description: JSON schema example for a name entity
 
 ---
+
+
 # Name
 
 <p>JSON schema example for a name entity</p>

@@ -3,6 +3,8 @@ title: Draft 07 - User Example
 description: A schema demonstrating some draft 07 features
 
 ---
+
+
 # Draft 07 - User Example
 
 <p>A schema demonstrating some draft 07 features</p>

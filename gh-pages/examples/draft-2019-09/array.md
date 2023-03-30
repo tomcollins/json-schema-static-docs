@@ -3,6 +3,8 @@ title: Draft 2019-09 - Array Example
 description: A schema describing fruits and vegetables
 
 ---
+
+
 # Draft 2019-09 - Array Example
 
 <p>A schema describing fruits and vegetables</p>
