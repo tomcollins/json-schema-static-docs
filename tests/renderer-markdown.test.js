@@ -71,6 +71,13 @@ const defaultMergedSchemaWithConst = {
     },
   },
 };
+const mergedSchemaWithRootLevelString = {
+  schema: {
+    $id: "/property1",
+    title: "Property 1",
+    type: "string",
+  },
+};
 let mergedSchema = {};
 
 const removeFormatting = (value) => {
@@ -102,7 +109,7 @@ test("renders attributes", async () => {
 
   let expectedText =
     "## Properties" +
-    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
+    '<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property2">property2</a></td><td>[string, integer]</td></tr>' +
     '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">property3.html</a>]</td></tr>' +
@@ -124,7 +131,7 @@ test("renders attributes with const", async () => {
 
   let expectedText =
     "## Properties" +
-    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
+    '<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property1">property1</a></td><td>String=foo</td></tr>' +
     "</tbody></table>";
 
@@ -133,7 +140,7 @@ test("renders attributes with const", async () => {
 
 // tests recursive rendering of nested properties
 test("renders nested property title correctly", async () => {
-  expect.assertions(1);
+  expect.assertions(3);
   rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
   await rendererMarkdown.setup();
   let result = rendererMarkdown.renderSchema(mergedSchema);
@@ -145,19 +152,24 @@ test("renders nested property title correctly", async () => {
     '<tr><th>Title</th><td colspan="2">Property 5</td></tr>' +
     '<tr><th>Type</th><td colspan="2">Object</td></tr>' +
     '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
-    "</tbody></table>" +
+    "</tbody></table>";
+  expect(result).toContain(expectedText);
+
+  let expectedText2 =
     "### Properties" +
-    '<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
+    '<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody>' +
     '<tr><td colspan="2"><a href="#property5property5.1">property5.1</a></td><td>Object</td></tr>' +
-    "</tbody></table>" +
+    "</tbody></table>";
+  expect(result).toContain(expectedText2);
+
+  let expectedText3 =
     "### property5.property5.1" +
-    "<table>" +
+    '<table class="jssd-property-table">' +
     '<tbody><tr><th>Type</th><td colspan="2">Object</td></tr></tbody></table>' +
     "### property5.property5.1.property5.1.1" +
-    "<table><tbody>" +
+    '<table class="jssd-property-table"><tbody>' +
     '<tr><th>Type</th><td colspan="2">String</td></tr></tbody></table>';
-
-  expect(result).toContain(expectedText);
+  expect(result).toContain(expectedText3);
 });
 
 test("renders string property enums", async () => {
@@ -228,6 +240,24 @@ test("renders array property types", async () => {
 
   let expectedType =
     '<tr><th>Type</th><td colspan="2">Array [<a href="property3.html">property3.html</a>]</td></tr>';
+
+  expect(result).toContain(expectedType);
+});
+
+test("renders root level string property", async () => {
+  expect.assertions(2);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchemaWithRootLevelString);
+
+  console.log(result);
+
+  result = removeFormatting(result);
+
+  let expectedTitle = '<tr><th>Title</th><td colspan="2">Property 1</td></tr>';
+  expect(result).toEqual(expect.stringContaining(expectedTitle));
+
+  let expectedType = '<tr><th>Type</th><td colspan="2">String</td></tr>';
 
   expect(result).toContain(expectedType);
 });

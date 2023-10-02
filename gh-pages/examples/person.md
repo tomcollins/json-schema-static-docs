@@ -18,7 +18,7 @@ description: JSON schema example for a person entity
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>Object (of type <a href="./name.html">Name</a>)</td></tr><tr><td colspan="2"><a href="#dateofbirth">dateOfBirth</a></td><td>String</td></tr><tr><td colspan="2"><a href="#address">address</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#friends">friends</a></td><td>Array [<a href="./name.html">Name</a>]</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>Object (of type <a href="./name.html">Name</a>)</td></tr><tr><td colspan="2"><a href="#dateofbirth">dateOfBirth</a></td><td>String</td></tr><tr><td colspan="2"><a href="#address">address</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#friends">friends</a></td><td>Array [<a href="./name.html">Name</a>]</td></tr></tbody></table>
 
 
 ## Example
@@ -73,12 +73,11 @@ description: JSON schema example for a person entity
 <hr />
 
 
-
 ## name
 
   <p>Defined in <a href="./name.html">./name.html</a></p>
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>$id</th>
@@ -102,16 +101,14 @@ description: JSON schema example for a person entity
 </table>
 
 ### Properties
-  <table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#nametitle">title</a></td><td>String</td></tr><tr><td colspan="2"><a href="#namefirstname">firstName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#namelastname">lastName</a></td><td>String</td></tr></tbody></table>
-
-
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#nametitle">title</a></td><td>String</td></tr><tr><td colspan="2"><a href="#namefirstname">firstName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#namelastname">lastName</a></td><td>String</td></tr></tbody></table>
 
 
 
 ## dateOfBirth
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -139,12 +136,10 @@ description: JSON schema example for a person entity
 
 
 
-
-
 ## address
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -164,13 +159,13 @@ description: JSON schema example for a person entity
 </table>
 
 ### Properties
-  <table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#addresshousenumber">houseNumber</a></td><td>String</td></tr><tr><td colspan="2"><a href="#addressstreet">street</a></td><td>String</td></tr><tr><td colspan="2"><a href="#addresscity">city</a></td><td>String</td></tr><tr><td colspan="2"><a href="#addresstimeataddress">timeAtAddress</a></td><td>Object</td></tr></tbody></table>
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#addresshousenumber">houseNumber</a></td><td>String</td></tr><tr><td colspan="2"><a href="#addressstreet">street</a></td><td>String</td></tr><tr><td colspan="2"><a href="#addresscity">city</a></td><td>String</td></tr><tr><td colspan="2"><a href="#addresstimeataddress">timeAtAddress</a></td><td>Object</td></tr></tbody></table>
 
 
 ### address.houseNumber
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -201,7 +196,7 @@ description: JSON schema example for a person entity
 ### address.street
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -232,7 +227,7 @@ description: JSON schema example for a person entity
 ### address.city
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -263,7 +258,7 @@ description: JSON schema example for a person entity
 ### address.timeAtAddress
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -287,7 +282,7 @@ description: JSON schema example for a person entity
 ### address.timeAtAddress.years
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -306,9 +301,6 @@ description: JSON schema example for a person entity
       <th>Minimum</th>
       <td colspan="2">1</td>
     </tr><tr>
-      <th>Minimum</th>
-      <td colspan="2">1</td>
-    </tr><tr>
       <th>Maximum</th>
       <td colspan="2">100</td>
     </tr>
@@ -321,7 +313,7 @@ description: JSON schema example for a person entity
 ### address.timeAtAddress.months
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -340,9 +332,6 @@ description: JSON schema example for a person entity
       <th>Minimum</th>
       <td colspan="2">1</td>
     </tr><tr>
-      <th>Minimum</th>
-      <td colspan="2">1</td>
-    </tr><tr>
       <th>Maximum</th>
       <td colspan="2">12</td>
     </tr>
@@ -354,13 +343,11 @@ description: JSON schema example for a person entity
 
 
 
-
-
 ## friends
 
   <p>Defined in <a href="./name.html">./name.html</a></p>
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -378,7 +365,6 @@ description: JSON schema example for a person entity
     
   </tbody>
 </table>
-
 
 
 

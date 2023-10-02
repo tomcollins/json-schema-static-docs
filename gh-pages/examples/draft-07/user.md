@@ -18,7 +18,7 @@ description: A schema demonstrating some draft 07 features
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#username">username</a></td><td>String=seymour_butz</td></tr><tr><td colspan="2"><a href="#password">password</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#username">username</a></td><td>String=seymour_butz</td></tr><tr><td colspan="2"><a href="#password">password</a></td><td>String</td></tr></tbody></table>
 
 
 ## Example
@@ -32,11 +32,10 @@ description: A schema demonstrating some draft 07 features
 <hr />
 
 
-
 ## username
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -65,12 +64,10 @@ description: A schema demonstrating some draft 07 features
 
 
 
-
-
 ## password
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -92,7 +89,6 @@ description: A schema demonstrating some draft 07 features
     
   </tbody>
 </table>
-
 
 
 

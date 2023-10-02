@@ -18,7 +18,7 @@ description: A schema demonstrating use of deprecated
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#firstname">firstName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#lastname">lastName</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#firstname">firstName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#lastname">lastName</a></td><td>String</td></tr></tbody></table>
 
 
 ## Example
@@ -32,11 +32,10 @@ description: A schema demonstrating use of deprecated
 <hr />
 
 
-
 ## firstName
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -58,12 +57,10 @@ description: A schema demonstrating use of deprecated
 
 
 
-
-
 ## lastName
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Deprecated</th>
@@ -85,7 +82,6 @@ description: A schema demonstrating use of deprecated
     
   </tbody>
 </table>
-
 
 
 

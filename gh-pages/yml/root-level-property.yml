@@ -1,0 +1,10 @@
+$id: root-level-property.yml
+$schema: http://json-schema.org/draft-07/schema#
+title: Root level property
+description: JSON schema example demonstrating a schema with a string property directly at the root level
+type: string
+examples:
+  - Value one
+  - Value two
+minLength: 1
+maxLength: 100

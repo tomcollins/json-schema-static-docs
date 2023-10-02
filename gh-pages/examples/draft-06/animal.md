@@ -18,7 +18,7 @@ description: A schema demonstrating some draft 06 features
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#animaltype">animalType</a></td><td>String</td></tr><tr><td colspan="2"><a href="#canfly">canFly</a></td><td>Boolean</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#animaltype">animalType</a></td><td>String</td></tr><tr><td colspan="2"><a href="#canfly">canFly</a></td><td>Boolean</td></tr></tbody></table>
 
 
 ## Example
@@ -39,11 +39,10 @@ description: A schema demonstrating some draft 06 features
 <hr />
 
 
-
 ## animalType
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -61,12 +60,10 @@ description: A schema demonstrating some draft 06 features
 
 
 
-
-
 ## canFly
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -80,7 +77,6 @@ description: A schema demonstrating some draft 06 features
     
   </tbody>
 </table>
-
 
 
 

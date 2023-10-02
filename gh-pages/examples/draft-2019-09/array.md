@@ -18,7 +18,7 @@ description: A schema describing fruits and vegetables
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#fruits">fruits</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#vegetables">vegetables</a></td><td>Array</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#fruits">fruits</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#vegetables">vegetables</a></td><td>Array</td></tr></tbody></table>
 
 
 ## Example
@@ -43,11 +43,10 @@ description: A schema describing fruits and vegetables
 <hr />
 
 
-
 ## fruits
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -72,12 +71,10 @@ description: A schema describing fruits and vegetables
 
 
 
-
-
 ## vegetables
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -101,7 +98,7 @@ description: A schema describing fruits and vegetables
 ### vegetables.name
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -122,7 +119,7 @@ description: A schema describing fruits and vegetables
 ### vegetables.hasARoundShape
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -136,7 +133,6 @@ description: A schema describing fruits and vegetables
     
   </tbody>
 </table>
-
 
 
 
