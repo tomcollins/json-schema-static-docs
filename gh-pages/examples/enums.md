@@ -18,7 +18,7 @@ description: JSON schema example demonstrating documentation of enum values usin
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#status">status</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#status">status</a></td><td>String</td></tr></tbody></table>
 
 
 ## Example
@@ -31,11 +31,10 @@ description: JSON schema example demonstrating documentation of enum values usin
 <hr />
 
 
-
 ## status
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -56,7 +55,6 @@ description: JSON schema example demonstrating documentation of enum values usin
     </tr>
   </tbody>
 </table>
-
 
 
 

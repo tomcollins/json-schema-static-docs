@@ -11,9 +11,11 @@
 </tbody>
 </table>
 
+{{#if schema.properties}}
 ## Properties
 
 {{propertiesTable schema }}
+{{/if}}
 
 {{#if example}}
 ## Example
@@ -33,21 +35,25 @@
 
 <hr />
 
+{{#if schema.properties}}
 {{#each schema.properties}}
-
 {{> property propertyKey=@key }}
-
 {{/each}}
+{{else}}
+{{> property schema isRootLevelProperty=true }}
+{{/if}}
 
 
 
 
 {{#*inline "property"}}
 
+{{#if (isNotDefined isRootLevelProperty)}}
 {{#if (isDefined parentKey)}}
 ### {{ parentKey }}.{{ propertyKey }}
 {{else}}
 ## {{ propertyKey }}
+{{/if}}
 {{/if}}
 
 {{#if (isExternalRef this.$ref)}}
@@ -109,7 +115,7 @@
 
 
 {{#*inline "propertyTable"}}
-<table>
+<table class="jssd-property-table">
   {{!-- <thead>
     <tr>
       <th>Attribute</th>

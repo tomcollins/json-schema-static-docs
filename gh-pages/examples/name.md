@@ -18,7 +18,7 @@ description: JSON schema example for a name entity
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#title">title</a></td><td>String</td></tr><tr><td colspan="2"><a href="#firstname">firstName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#lastname">lastName</a></td><td>String</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#title">title</a></td><td>String</td></tr><tr><td colspan="2"><a href="#firstname">firstName</a></td><td>String</td></tr><tr><td colspan="2"><a href="#lastname">lastName</a></td><td>String</td></tr></tbody></table>
 
 
 ## Example
@@ -33,11 +33,10 @@ description: JSON schema example for a name entity
 <hr />
 
 
-
 ## title
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -66,12 +65,10 @@ description: JSON schema example for a name entity
 
 
 
-
-
 ## firstName
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -102,12 +99,10 @@ description: JSON schema example for a name entity
 
 
 
-
-
 ## lastName
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -134,7 +129,6 @@ description: JSON schema example for a name entity
     </tr>
   </tbody>
 </table>
-
 
 
 

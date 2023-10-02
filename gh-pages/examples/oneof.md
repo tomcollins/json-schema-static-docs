@@ -18,7 +18,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 ## Properties
 
-<table><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><th rowspan="2">justOne</th><td rowspan="2">One of:</td><td>Object</td></tr><tr><td>Object</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><th rowspan="2">justOne</th><td rowspan="2">One of:</td><td>Object</td></tr><tr><td>Object</td></tr></tbody></table>
 
 
 ## Example
@@ -42,11 +42,10 @@ description: Example schema to demonstrate the use of the oneOf keyword
 <hr />
 
 
-
 ## justOne
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -70,7 +69,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ### justOne.0
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -86,7 +85,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ### justOne.0.propertyA
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -104,7 +103,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ### justOne.1
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -120,7 +119,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ### justOne.1.propertyB
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -137,7 +136,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ### justOne.1.propertyC
 
 
-<table>
+<table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
@@ -147,7 +146,6 @@ description: Example schema to demonstrate the use of the oneOf keyword
     
   </tbody>
 </table>
-
 
 
 

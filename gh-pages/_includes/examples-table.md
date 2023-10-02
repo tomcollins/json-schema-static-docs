@@ -5,6 +5,7 @@
 | [Name](/json-schema-static-docs/examples/name.html)                                           | [name.yml](/json-schema-static-docs/yml/name.yml)                                         |
 | [Enum Value Documentation](/json-schema-static-docs/examples/enums.html)                      | [enums.yml](/json-schema-static-docs/yml/enums.yml)                                       |
 | [One-of](/json-schema-static-docs/examples/oneof.html)                                        | [oneof.yml](/json-schema-static-docs/yml/oneof.yml)                                       |
+| [Root level property](/json-schema-static-docs/examples/root-level-property.html)             | [root-level-property.yml](/json-schema-static-docs/yml/root-level-property.yml)           |
 | [Draft 2019-09 - Array](/json-schema-static-docs/examples/draft-2019-09/array.html)           | [draft-2019-09/array.yml](/json-schema-static-docs/yml/draft-2019-09/array.yml)           |
 | [Draft 2019-09 - Deprecated](/json-schema-static-docs/examples/draft-2019-09/deprecated.html) | [draft-2019-09/deprecated.yml](/json-schema-static-docs/yml/draft-2019-09/deprecated.yml) |
 | [Draft 07 - User](/json-schema-static-docs/examples/draft-07/user.html)                       | [draft-07/user.yml](/json-schema-static-docs/yml/draft-07/user.yml)                       |
