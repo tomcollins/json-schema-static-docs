@@ -58,3 +58,43 @@ test("fails with invalid type", () => {
     expect(e[0].schemaPath).toBe("#/properties/property1/type");
   }
 });
+
+let draft2020Schema = {
+  $id: "2",
+  $schema: "https://json-schema.org/draft/2020-12/schema",
+  title: "2 draft 2020-12",
+  type: "object",
+  properties: {
+    property2: {
+      type: "string",
+    },
+  },
+  additionalProperties: false,
+};
+
+let draft2020DataValid = {
+  property2: "foo",
+};
+
+let draft2020DataInvalid = {
+  property2: 123,
+};
+
+test("validates draft 2020-12 schemas and data", () => {
+  const validator = new Validator([draft2020Schema], defaultOptions);
+  const result = validator.validateSchemaAndData(draft2020Schema, draft2020DataValid);
+  expect(result).toBe(true);
+});
+
+test("fails with invalid type for draft 2020-12 schema", () => {
+  expect.assertions(3);
+  const validator = new Validator([draft2020Schema], defaultOptions);
+  let result;
+  try {
+    result = validator.validateSchemaAndData(draft2020Schema, draft2020DataInvalid);
+  } catch (e) {
+    expect(e.length).toBe(1);
+    expect(e[0].keyword).toBe("type");
+    expect(e[0].schemaPath).toBe("#/properties/property2/type");
+  }
+});
