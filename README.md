@@ -9,7 +9,7 @@ Generates static documentation for humans based on the contents of [JSON schema]
 ## Support for JSON schema specification versions
 
 Currently supports schema specified using the following [specification versions](https://json-schema.org/specification-links.html):
-draft-06, draft-07 and draft-2019-09.
+draft-06, draft-07, draft-2019-09, and draft 2020-12.
 
 For complete documentation, including examples and supported keywords, see [tomcollins.github.io/json-schema-static-docs](https://tomcollins.github.io/json-schema-static-docs/).
 
@@ -38,3 +38,26 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
   console.log("Documents generated.");
 })();
 ```
+
+### How to use draft-2020-12
+
+To use schema based on `draft-2020-12` set `options.jsonSchemaVersion` to `https://json-schema.org/draft/2020-12/schema`.
+
+```javascript
+const JsonSchemaStaticDocs = require("json-schema-static-docs");
+
+(async () => {
+  let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
+    inputPath: "./schema",
+    outputPath: "./docs",
+    jsonSchemaVersion: "https://json-schema.org/draft/2020-12/schema",
+    ajvOptions: {
+      allowUnionTypes: true,
+    },
+  });
+  await jsonSchemaStaticDocs.generate();
+  console.log("Documents generated.");
+})();
+```
+
+All schema documentsmust use must use `draft-2020-12`, you can not combine this with earlier versions such as `draft-07`.

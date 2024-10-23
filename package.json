@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^10.1.0",
-    "ajv": "^8.12.0",
-    "ajv-formats": "^2.1.1",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
     "extend": "^3.0.2",
     "fast-glob": "^3.3.1",
     "handlebars": "^4.7.7",
@@ -34,7 +34,7 @@
     "make-dir": "^3.1.0",
     "mkdirp": "^2.1.6",
     "optimist": "^0.5.2",
-    "rimraf": "^4.4.1",
+    "rimraf": "^5.0.10",
     "yaml": "^2.2.2"
   },
   "devDependencies": {

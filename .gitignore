@@ -1,5 +1,6 @@
 node_modules
 tests/docs
 docs
+tmp
 gh-pages/.jekyll-cache
 gh-pages/_site
