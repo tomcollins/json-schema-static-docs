@@ -2,7 +2,6 @@ const { determineSchemaRelativePath } = require("../lib/utils.js");
 
 const path = require("path");
 const temp = path.join("./test/", "*/**.json");
-console.log("temp", temp);
 
 describe("Utils", () => {
   describe("determineSchemaRelativePath", () => {

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const rimraf = require("rimraf");
+const { rimrafSync } = require("rimraf");
 const _ = require("lodash");
 
 const JsonSchamaStaticDocs = require("../lib/json-schema-static-docs.js");
@@ -14,7 +14,7 @@ let testOptions = {};
 beforeEach(() => {
   testOptions = _.cloneDeep(defaultTestOptions);
   if (fs.existsSync(testOptions.outputPath)) {
-    rimraf.sync(testOptions.outputPath);
+    rimrafSync(testOptions.outputPath);
   }
   fs.mkdirSync(testOptions.outputPath);
 });
