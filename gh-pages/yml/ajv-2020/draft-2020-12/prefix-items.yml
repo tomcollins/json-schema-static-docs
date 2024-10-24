@@ -1,0 +1,18 @@
+"$id": https://example.com/2020-12-prefix-items.json
+"$schema": https://json-schema.org/draft/2020-12/schema
+title: Draft 2019-09 - Deprecated Example
+description: A schema demonstrating use of deprecated
+examples:
+  - members:
+      - 1
+      - Two
+type: object
+properties:
+  members:
+    type: array
+    prefixItems: 
+      - type: "integer"
+      - type: "string"
+    minItems: 2
+    maxItems: 2
+    items: false

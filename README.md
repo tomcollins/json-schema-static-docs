@@ -60,4 +60,4 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 })();
 ```
 
-All schema documentsmust use must use `draft-2020-12`, you can not combine this with earlier versions such as `draft-07`.
+All schema documents must use must use `draft-2020-12`, you can not combine this with earlier versions such as `draft-07`.
