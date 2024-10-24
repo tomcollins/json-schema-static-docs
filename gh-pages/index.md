@@ -59,6 +59,29 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 })();
 ```
 
+## Using JSON schema draft-2020-12
+
+By defualt the library supports schema using draft-06, draft-07 and draft-2019-09.
+
+To use schema based on `draft-2020-12` set `options.jsonSchemaVersion` to `https://json-schema.org/draft/2020-12/schema`. All schema documents must use must use `draft-2020-12`, you can not combine this with earlier versions such as `draft-07`.
+
+```javascript
+const JsonSchemaStaticDocs = require("json-schema-static-docs");
+
+(async () => {
+  let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
+    inputPath: "schema",
+    outputPath: "docs",
+    jsonSchemaVersion: "https://json-schema.org/draft/2020-12/schema",
+    ajvOptions: {
+      allowUnionTypes: true,
+    },
+  });
+  await jsonSchemaStaticDocs.generate();
+  console.log("Documents generated.");
+})();
+```
+
 ## Options
 
 | Parameter      | Description                                   | Default            |
