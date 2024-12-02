@@ -1,6 +1,6 @@
 {
   "name": "json-schema-static-docs",
-  "version": "0.27.0",
+  "version": "0.27.1",
   "description": "Generates static documentation for humans based on the contents of JSON schema files (yml or json).",
   "main": "lib/json-schema-static-docs.js",
   "bin": {
