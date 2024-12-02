@@ -24,6 +24,7 @@ description: JSON schema example demonstrating a schema with properties that hav
 ## Example
 
 
+
 ```
 {
     "defaultString": "Hello",
@@ -32,6 +33,8 @@ description: JSON schema example demonstrating a schema with properties that hav
     }
 }
 ```
+
+
 
 <hr />
 

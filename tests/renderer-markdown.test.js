@@ -249,9 +249,9 @@ test("renders example meta title and description", async () => {
   let result = rendererMarkdown.renderSchema(mergedSchema);
 
   result = result.match(/## Example(.*\n)*/)[0];
-  result = removeFormatting(result);
 
-  let expectedText = "### Meta Title<p>Meta Description</p>";
+  // double line break is necessary for some markdown renderers to render the codeblock correctly
+  let expectedText = "### Meta Title\n<p>Meta Description</p>\n\n```";
 
   expect(result).toContain(expectedText);
 });

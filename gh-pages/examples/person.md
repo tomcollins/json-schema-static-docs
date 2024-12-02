@@ -24,6 +24,7 @@ description: JSON schema example for a person entity
 ## Example
 
 
+
 ```
 {
     "name": {
@@ -43,7 +44,10 @@ description: JSON schema example for a person entity
     }
 }
 ```
+
+
 ## Example
+
 
 
 ```
@@ -73,6 +77,8 @@ description: JSON schema example for a person entity
     ]
 }
 ```
+
+
 
 <hr />
 

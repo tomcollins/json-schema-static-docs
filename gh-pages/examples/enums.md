@@ -24,11 +24,14 @@ description: JSON schema example demonstrating documentation of enum values usin
 ## Example
 
 
+
 ```
 {
     "status": "Active"
 }
 ```
+
+
 
 <hr />
 
