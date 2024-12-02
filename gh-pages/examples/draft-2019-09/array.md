@@ -24,6 +24,7 @@ description: A schema describing fruits and vegetables
 ## Example
 
 
+
 ```
 {
     "fruits": [
@@ -41,6 +42,8 @@ description: A schema describing fruits and vegetables
     ]
 }
 ```
+
+
 
 <hr />
 

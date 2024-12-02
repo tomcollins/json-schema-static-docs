@@ -24,6 +24,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ## Example
 
 
+
 ```
 {
     "justOne": {
@@ -31,7 +32,10 @@ description: Example schema to demonstrate the use of the oneOf keyword
     }
 }
 ```
+
+
 ## Example
+
 
 
 ```
@@ -42,6 +46,8 @@ description: Example schema to demonstrate the use of the oneOf keyword
     }
 }
 ```
+
+
 
 <hr />
 

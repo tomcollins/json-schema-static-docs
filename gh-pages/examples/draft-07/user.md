@@ -24,12 +24,15 @@ description: A schema demonstrating some draft 07 features
 ## Example
 
 
+
 ```
 {
     "username": "seymour_butz",
     "password": "M0zT4v3rn"
 }
 ```
+
+
 
 <hr />
 

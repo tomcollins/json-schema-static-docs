@@ -24,12 +24,15 @@ description: A schema demonstrating use of deprecated
 ## Example
 
 
+
 ```
 {
     "firstName": "Neil",
     "lastName": "Williams"
 }
 ```
+
+
 
 <hr />
 

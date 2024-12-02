@@ -1,7 +1,9 @@
 ---
 title: Person
 description: JSON schema example for a person entity
+
 ---
+
 
 # Person
 
@@ -18,18 +20,21 @@ description: JSON schema example for a person entity
 
 <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#name">name</a></td><td>String</td></tr></tbody></table>
 
+
 ## Example
-
 ### Title for the example
-
 <p>Description for the example</p>
+
 ```
 {
     "name": "Rhys"
 }
 ```
+
+
 ## Example
 ### Title for the second example
+
 
 ```
 {
@@ -37,7 +42,10 @@ description: JSON schema example for a person entity
 }
 ```
 
+
 ## Example
+
+
 
 ```
 {
@@ -45,9 +53,13 @@ description: JSON schema example for a person entity
 }
 ```
 
+
+
 <hr />
 
+
 ## name
+
 
 <table class="jssd-property-table">
   <tbody>
@@ -71,10 +83,17 @@ description: JSON schema example for a person entity
   </tbody>
 </table>
 
+
+
+
+
+
+
+
+
 <hr />
 
 ## Schema
-
 ```
 {
     "$id": "examples-with-meta.yml",
@@ -112,3 +131,5 @@ description: JSON schema example for a person entity
     ]
 }
 ```
+
+

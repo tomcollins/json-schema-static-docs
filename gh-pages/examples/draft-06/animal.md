@@ -24,13 +24,17 @@ description: A schema demonstrating some draft 06 features
 ## Example
 
 
+
 ```
 {
     "animalType": "Bear",
     "canFly": false
 }
 ```
+
+
 ## Example
+
 
 
 ```
@@ -39,6 +43,8 @@ description: A schema demonstrating some draft 06 features
     "canFly": true
 }
 ```
+
+
 
 <hr />
 
