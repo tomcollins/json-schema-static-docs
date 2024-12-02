@@ -19,10 +19,14 @@ description: JSON schema example demonstrating a schema with a string property d
 
 
 ## Example
+
+
 ```
 "Value one"
 ```
 ## Example
+
+
 ```
 "Value two"
 ```

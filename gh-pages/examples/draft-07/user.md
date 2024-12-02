@@ -22,6 +22,8 @@ description: A schema demonstrating some draft 07 features
 
 
 ## Example
+
+
 ```
 {
     "username": "seymour_butz",

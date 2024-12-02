@@ -22,6 +22,8 @@ description: A schema demonstrating some draft 06 features
 
 
 ## Example
+
+
 ```
 {
     "animalType": "Bear",
@@ -29,6 +31,8 @@ description: A schema demonstrating some draft 06 features
 }
 ```
 ## Example
+
+
 ```
 {
     "animalType": "Bat",

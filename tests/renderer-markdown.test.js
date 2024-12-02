@@ -11,6 +11,40 @@ let rendererMarkdown;
 let defaultMergedSchema = {
   schema: {
     title: "My Schema",
+    examples: [
+      {
+        "meta:title": "Meta Title",
+        "meta:description": "Meta Description",
+        title: "Example 1",
+        description: "Description for Example 1",
+        data: {
+          property1: "foo",
+          property2: 42,
+          property3: ["foo", "bar"],
+          property4: "foo",
+          property5: {
+            "property5.1": {
+              "property5.1.1": "foo",
+            },
+          },
+        },
+      },
+      {
+        title: "Example 2",
+        description: "Description for Example 2",
+        data: {
+          property1: "bar",
+          property2: 42,
+          property3: ["foo", "bar"],
+          property4: "foo",
+          property5: {
+            "property5.1": {
+              "property5.1.1": "foo",
+            },
+          },
+        },
+      },
+    ],
     properties: {
       property1: {
         title: "Property 1",
@@ -204,6 +238,20 @@ test("renders string property enums with meta description", async () => {
     '<tr><th>Type</th><td colspan="2">String</td></tr>' +
     '<tr><th>Required</th><td colspan="2">Yes</td></tr>' +
     '<tr><th>Enum</th><td colspan="2"><dl><dt>42</dt><dd>Description for 42</dd><dt>foo</dt><dd>Description for foo</dd></dl></td></tr>';
+
+  expect(result).toContain(expectedText);
+});
+
+test("renders example meta title and description", async () => {
+  expect.assertions(1);
+  rendererMarkdown = new RendererMarkdown(defaultTemplatePath);
+  await rendererMarkdown.setup();
+  let result = rendererMarkdown.renderSchema(mergedSchema);
+
+  result = result.match(/## Example(.*\n)*/)[0];
+  result = removeFormatting(result);
+
+  let expectedText = "### Meta Title<p>Meta Description</p>";
 
   expect(result).toContain(expectedText);
 });

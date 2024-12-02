@@ -32,6 +32,8 @@
   },
   "examples": [
     {
+      "meta:title": "Title",
+      "meta:description": "Description",
       "firstNames": "Andrew Barry",
       "lastName": "Cunningham"
     }
