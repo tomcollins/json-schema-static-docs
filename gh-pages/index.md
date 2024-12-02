@@ -170,6 +170,44 @@ property1:
     42: Description for 42
 ```
 
+### Describing examples with title and description
+
+You can add an optional title or description to each example in a schema using `meta:title` and `meta:description`. For example:
+
+```json
+{
+  "$id": "examples-with-meta.yml",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "description": "JSON schema example for a person entity",
+  "type": "object",
+  "examples": [
+    {
+      "meta:title": "Title for the example",
+      "meta:description": "Description for the example",
+      "name": "Rhys"
+    },
+    {
+      "meta:title": "Title for the second example",
+      "name": "Sarah"
+    },
+    {
+      "name": "Charlie"
+    }
+  ],
+  "properties": {
+    "name": {
+      "title": "Name",
+      "description": "The name of a person",
+      "type": "string",
+      "examples": ["David"]
+    }
+  },
+  "additionalProperties": false,
+  "required": ["name"]
+}
+```
+
 ## Custom Templates
 
 Templates are authored in [handlebars.js](https://handlebarsjs.com).

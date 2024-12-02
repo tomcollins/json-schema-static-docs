@@ -22,6 +22,8 @@ description: JSON schema example for a name entity
 
 
 ## Example
+
+
 ```
 {
     "title": "Mr",

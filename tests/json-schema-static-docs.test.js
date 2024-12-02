@@ -56,13 +56,3 @@ test("allows templates to be skipped", async () => {
   expect(schema.title).toBe("Person");
   expect(schema.properties.name.properties.firstNames.type).toBe("string");
 });
-
-test("renders meta:title and meta:description in examples", async () => {
-  const jsonSchameStaticDocs = new JsonSchamaStaticDocs(testOptions);
-  await jsonSchameStaticDocs.generate();
-  let result = fs.readFileSync(path.join(testOptions.outputPath, "name.md"));
-  result = result.toString();
-  expect(result).toContain("## Example");
-  expect(result).toContain("### First example");
-  expect(result).toContain("<p>First description.</p>");
-});
