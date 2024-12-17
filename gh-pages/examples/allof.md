@@ -1,24 +1,24 @@
 ---
-title: One-of
-description: Example schema to demonstrate the use of the oneOf keyword
+title: All-of
+description: Example schema to demonstrate the use of the allOf keyword
 
 ---
 
 
-# One-of
+# All-of
 
-<p>Example schema to demonstrate the use of the oneOf keyword</p>
+<p>Example schema to demonstrate the use of the allOf keyword</p>
 
 <table>
 <tbody>
-<tr><th>$id</th><td>oneof.yml</td></tr>
+<tr><th>$id</th><td>allof.yml</td></tr>
 <tr><th>$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
 </tbody>
 </table>
 
 ## Properties
 
-<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td rowspan="2">justOne</td><td rowspan="2">One of:</td><td>Object</td></tr><tr><td>Object</td></tr></tbody></table>
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td rowspan="2">allOfExample</td><td rowspan="2">All of:</td><td>Object</td></tr><tr><td>Object</td></tr></tbody></table>
 
 
 ## Example
@@ -27,8 +27,9 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 ```
 {
-    "justOne": {
-        "propertyA": "With a string value"
+    "allOfExample": {
+        "propertyA": "With a string value",
+        "propertyB": 123
     }
 }
 ```
@@ -40,9 +41,10 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 ```
 {
-    "justOne": {
-        "propertyB": 123,
-        "propertyC": 456
+    "allOfExample": {
+        "propertyA": "Another string value",
+        "propertyB": 456,
+        "propertyC": 789
     }
 }
 ```
@@ -52,20 +54,20 @@ description: Example schema to demonstrate the use of the oneOf keyword
 <hr />
 
 
-## justOne
+## allOfExample
 
 
 <table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
-      <td colspan="2">Just One</td>
+      <td colspan="2">All Of Example</td>
     </tr>
     <tr>
       <th>Description</th>
-      <td colspan="2">Property that demonstrates oneOf</td>
+      <td colspan="2">Property that demonstrates allOf</td>
     </tr>
-    <tr><tr><td rowspan="2">Type</td><td rowspan="2">One of:</td><td>Object</td></tr><tr><td>Object</td></tr></tr>
+    <tr><tr><td rowspan="2">Type</td><td rowspan="2">All of:</td><td>Object</td></tr><tr><td>Object</td></tr></tr>
     <tr>
       <th>Required</th>
       <td colspan="2">Yes</td>
@@ -76,14 +78,14 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 
 
-### justOne.0
+### allOfExample.0
 
 
 <table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
-      <td colspan="2">justOne option 0 with a single property</td>
+      <td colspan="2">allOfExample option 0 with a single property</td>
     </tr>
     
     
@@ -92,7 +94,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 
 
-### justOne.0.propertyA
+### allOfExample.0.propertyA
 
 
 <table class="jssd-property-table">
@@ -110,14 +112,14 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 
 
-### justOne.1
+### allOfExample.1
 
 
 <table class="jssd-property-table">
   <tbody>
     <tr>
       <th>Title</th>
-      <td colspan="2">justOne option 1 with two properties</td>
+      <td colspan="2">allOfExample option 1 with two properties</td>
     </tr>
     
     
@@ -126,7 +128,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 
 
-### justOne.1.propertyB
+### allOfExample.1.propertyB
 
 
 <table class="jssd-property-table">
@@ -143,7 +145,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
 
 
 
-### justOne.1.propertyC
+### allOfExample.1.propertyC
 
 
 <table class="jssd-property-table">
@@ -172,44 +174,47 @@ description: Example schema to demonstrate the use of the oneOf keyword
 ## Schema
 ```
 {
-    "$id": "oneof.yml",
+    "$id": "allof.yml",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "One-of",
-    "description": "Example schema to demonstrate the use of the oneOf keyword",
+    "title": "All-of",
+    "description": "Example schema to demonstrate the use of the allOf keyword",
     "type": "object",
     "examples": [
         {
-            "justOne": {
-                "propertyA": "With a string value"
+            "allOfExample": {
+                "propertyA": "With a string value",
+                "propertyB": 123
             }
         },
         {
-            "justOne": {
-                "propertyB": 123,
-                "propertyC": 456
+            "allOfExample": {
+                "propertyA": "Another string value",
+                "propertyB": 456,
+                "propertyC": 789
             }
         }
     ],
     "properties": {
-        "justOne": {
-            "title": "Just One",
-            "description": "Property that demonstrates oneOf",
+        "allOfExample": {
+            "title": "All Of Example",
+            "description": "Property that demonstrates allOf",
             "type": "object",
-            "oneOf": [
+            "allOf": [
                 {
-                    "title": "justOne option 0 with a single property",
+                    "title": "allOfExample option 0 with a single property",
                     "properties": {
                         "propertyA": {
                             "type": "string",
                             "title": "Property A"
                         }
                     },
+                    "additionalProperties": false,
                     "required": [
                         "propertyA"
                     ]
                 },
                 {
-                    "title": "justOne option 1 with two properties",
+                    "title": "allOfExample option 1 with two properties",
                     "properties": {
                         "propertyB": {
                             "type": "integer",
@@ -220,9 +225,9 @@ description: Example schema to demonstrate the use of the oneOf keyword
                             "title": "Property C"
                         }
                     },
+                    "additionalProperties": false,
                     "required": [
-                        "propertyB",
-                        "propertyC"
+                        "propertyB"
                     ]
                 }
             ]
@@ -230,7 +235,7 @@ description: Example schema to demonstrate the use of the oneOf keyword
     },
     "additionalProperties": false,
     "required": [
-        "justOne"
+        "allOfExample"
     ]
 }
 ```

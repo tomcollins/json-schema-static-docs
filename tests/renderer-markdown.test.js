@@ -90,6 +90,36 @@ let defaultMergedSchema = {
           },
         },
       },
+      property6: {
+        title: "Property 6",
+        type: "object",
+        isRequired: true,
+        allOf: [
+          {
+            title: "AllOf Property 1",
+            type: "string",
+          },
+          {
+            title: "AllOf Property 2",
+            type: "integer",
+          },
+        ],
+      },
+      property7: {
+        title: "Property 7",
+        type: "object",
+        isRequired: true,
+        anyOf: [
+          {
+            title: "AnyOf Property 1",
+            type: "string",
+          },
+          {
+            title: "AnyOf Property 2",
+            type: "integer",
+          },
+        ],
+      },
     },
   },
 };
@@ -149,6 +179,8 @@ test("renders attributes", async () => {
     '<tr><td colspan="2"><a href="#property3">property3</a></td><td>Array [<a href="property3.html">property3.html</a>]</td></tr>' +
     '<tr><td colspan="2"><a href="#property4">property4</a></td><td>String</td></tr>' +
     '<tr><td colspan="2"><a href="#property5">property5</a></td><td>Object</td></tr>' +
+    '<tr><td rowspan="2">property6</td><td rowspan="2">All of:</td><td>String</td></tr><tr><td>Integer</td></tr>';
+  '<tr><td rowspan="2">property7</td><td rowspan="2">Any of:</td><td>String</td></tr><tr><td>Integer</td></tr>' +
     "</tbody></table>";
 
   expect(result).toContain(expectedText);

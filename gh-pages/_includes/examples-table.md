@@ -5,7 +5,9 @@
 | [Name](/json-schema-static-docs/examples/name.html)                                               | [name.yml](/json-schema-static-docs/yml/ajv-2019/name.yml)                                             |
 | [Enum Value Documentation](/json-schema-static-docs/examples/enums.html)                          | [enums.yml](/json-schema-static-docs/yml/ajv-2019/enums.yml)                                           |
 | [Examples Title and Documentation](/json-schema-static-docs/examples/examples-with-meta.html)     | [examples-with-meta.yml](/json-schema-static-docs/yml/ajv-2019/examples-with-meta.yml)                 |
-| [One-of](/json-schema-static-docs/examples/oneof.html)                                            | [examples.yml](/json-schema-static-docs/yml/ajv-2019/examples.yml)                                     |
+| [One-of](/json-schema-static-docs/examples/oneof.html)                                            | [oneof.yml](/json-schema-static-docs/yml/ajv-2019/oneof.yml)                                           |
+| [All-of](/json-schema-static-docs/examples/allof.html)                                            | [allof.yml](/json-schema-static-docs/yml/ajv-2019/allof.yml)                                           |
+| [Any-of](/json-schema-static-docs/examples/anyof.html)                                            | [anyof.yml](/json-schema-static-docs/yml/ajv-2019/anyof.yml)                                           |
 | [Root level property](/json-schema-static-docs/examples/root-level-property.html)                 | [root-level-property.yml](/json-schema-static-docs/yml/ajv-2019/root-level-property.yml)               |
 | [Draft 2020-12 - Prefix Items](/json-schema-static-docs/examples/draft-2020-12/prefix-items.html) | [draft-2020-12/prefix-items.yml](/json-schema-static-docs/yml/ajv-2020/draft-2020-12/prefix-items.yml) |
 | [Draft 2019-09 - Array](/json-schema-static-docs/examples/draft-2019-09/array.html)               | [draft-2019-09/array.yml](/json-schema-static-docs/yml/ajv-2019/draft-2019-09/array.yml)               |

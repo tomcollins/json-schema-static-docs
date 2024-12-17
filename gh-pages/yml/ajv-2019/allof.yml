@@ -1,0 +1,41 @@
+$id: allof.yml
+$schema: http://json-schema.org/draft-07/schema#
+title: All-of
+description: Example schema to demonstrate the use of the allOf keyword
+type: object
+examples:
+  - allOfExample:
+      propertyA: With a string value
+      propertyB: 123
+  - allOfExample:
+      propertyA: Another string value
+      propertyB: 456
+      propertyC: 789
+properties:
+  allOfExample:
+    title: All Of Example
+    description: Property that demonstrates allOf
+    type: object
+    allOf:
+      - title: allOfExample option 0 with a single property
+        properties:
+          propertyA:
+            type: string
+            title: Property A
+        additionalProperties: false
+        required:
+          - propertyA
+      - title: allOfExample option 1 with two properties
+        properties:
+          propertyB:
+            type: integer
+            title: Property B
+          propertyC:
+            type: integer
+            title: Property C
+        additionalProperties: false
+        required:
+          - propertyB
+additionalProperties: false
+required:
+  - allOfExample

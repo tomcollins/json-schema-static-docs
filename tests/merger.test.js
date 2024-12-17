@@ -149,6 +149,106 @@ let resolvedSchemas3 = [
   },
 ];
 
+let unresolvedSchemas4 = [
+  {
+    filename: "schema/file5.json",
+    data: {
+      $id: 5,
+      title: "5 unresolved",
+      properties: { property1: { $ref: "#/definitions/property1" } },
+      definitions: {
+        property1: {
+          allOf: [{ $ref: "property1.json" }, { $ref: "property2.json" }],
+        },
+      },
+    },
+  },
+];
+let resolvedSchemas4 = [
+  {
+    filename: "schema/file5.json",
+    data: {
+      $id: 5,
+      title: "5 resolved",
+      properties: {
+        property1: {
+          allOf: [
+            {
+              title: "allOfProperty1",
+            },
+            {
+              title: "allOfProperty2",
+            },
+          ],
+        },
+      },
+      required: [],
+      definitions: {
+        property1: {
+          allOf: [
+            {
+              title: "allOfProperty1",
+            },
+            {
+              title: "allOfProperty2",
+            },
+          ],
+        },
+      },
+    },
+  },
+];
+
+let unresolvedSchemas5 = [
+  {
+    filename: "schema/file6.json",
+    data: {
+      $id: 6,
+      title: "6 unresolved",
+      properties: { property1: { $ref: "#/definitions/property1" } },
+      definitions: {
+        property1: {
+          anyOf: [{ $ref: "property1.json" }, { $ref: "property2.json" }],
+        },
+      },
+    },
+  },
+];
+let resolvedSchemas5 = [
+  {
+    filename: "schema/file6.json",
+    data: {
+      $id: 6,
+      title: "6 resolved",
+      properties: {
+        property1: {
+          anyOf: [
+            {
+              title: "anyOfProperty1",
+            },
+            {
+              title: "anyOfProperty2",
+            },
+          ],
+        },
+      },
+      required: [],
+      definitions: {
+        property1: {
+          anyOf: [
+            {
+              title: "anyOfProperty1",
+            },
+            {
+              title: "anyOfProperty2",
+            },
+          ],
+        },
+      },
+    },
+  },
+];
+
 test("merges schemas", () => {
   const results = Merger.mergeSchemas(unresolvedSchemas, resolvedSchemas);
   expect(results).toHaveLength(2);
@@ -173,6 +273,28 @@ test("sets $ref in definitions containing OneOf", () => {
   expect(property.oneOf.length).toBe(2);
   expect(property.oneOf[0].title).toBe("oneOfProperty1");
   expect(property.oneOf[1].title).toBe("oneOfProperty2");
+});
+
+test("sets $ref in definitions containing AllOf", () => {
+  const results = Merger.mergeSchemas(unresolvedSchemas4, resolvedSchemas4);
+  expect(results).toHaveLength(1);
+  expect(results[0].filename).toBe("schema/file5.json");
+  expect(results[0].schema.$id).toBe(5);
+  let property = results[0].schema.properties.property1;
+  expect(property.allOf.length).toBe(2);
+  expect(property.allOf[0].title).toBe("allOfProperty1");
+  expect(property.allOf[1].title).toBe("allOfProperty2");
+});
+
+test("sets $ref in definitions containing AnyOf", () => {
+  const results = Merger.mergeSchemas(unresolvedSchemas5, resolvedSchemas5);
+  expect(results).toHaveLength(1);
+  expect(results[0].filename).toBe("schema/file6.json");
+  expect(results[0].schema.$id).toBe(6);
+  let property = results[0].schema.properties.property1;
+  expect(property.anyOf.length).toBe(2);
+  expect(property.anyOf[0].title).toBe("anyOfProperty1");
+  expect(property.anyOf[1].title).toBe("anyOfProperty2");
 });
 
 test("XXX sets isRequired on each schama property", () => {
