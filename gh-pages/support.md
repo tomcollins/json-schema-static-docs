@@ -36,8 +36,8 @@ Coverage for [A Vocabulary for Applying Subschemas](https://json-schema.org/draf
 | `additionalItems`       | No        |
 | `additionalProperties`  | Yes       |
 | `oneOf`                 | Yes       |
-| `allOf`                 | No        |
-| `anyOf`                 | No        |
+| `allOf`                 | Yes       |
+| `anyOf`                 | Yes       |
 | `contains`              | Yes       |
 | `dependentSchemas`      | No        |
 | `else`                  | No        |

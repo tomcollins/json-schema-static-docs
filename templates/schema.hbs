@@ -104,6 +104,24 @@
 {{/if}}
 {{/each}}
 {{/if}}
+{{#if this.allOf }}
+{{#each this.allOf}}
+{{#if (isDefined ../parentKey)}}
+{{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
+{{else}}
+{{> property parentKey=../propertyKey propertyKey=@key }}
+{{/if}}
+{{/each}}
+{{/if}}
+{{#if this.anyOf }}
+{{#each this.anyOf}}
+{{#if (isDefined ../parentKey)}}
+{{> property parentKey=(concat ../parentKey '.' ../propertyKey) propertyKey=@key }}
+{{else}}
+{{> property parentKey=../propertyKey propertyKey=@key }}
+{{/if}}
+{{/each}}
+{{/if}}
 {{/unless}}
 
 {{/inline}}

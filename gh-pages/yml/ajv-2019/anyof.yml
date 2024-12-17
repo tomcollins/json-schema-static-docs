@@ -1,0 +1,38 @@
+$id: anyof.yml
+$schema: http://json-schema.org/draft-07/schema#
+title: Any-of
+description: Example schema to demonstrate the use of the anyOf keyword
+type: object
+examples:
+  - anyOfExample:
+      propertyA: With a string value
+  - anyOfExample:
+      propertyB: 123
+      propertyC: 456
+properties:
+  anyOfExample:
+    title: Any Of Example
+    description: Property that demonstrates anyOf
+    type: object
+    anyOf:
+      - title: anyOfExample option 0 with a single property
+        properties:
+          propertyA:
+            type: string
+            title: Property A
+        required:
+          - propertyA
+      - title: anyOfExample option 1 with two properties
+        properties:
+          propertyB:
+            type: integer
+            title: Property B
+          propertyC:
+            type: integer
+            title: Property C
+        required:
+          - propertyB
+          - propertyC
+additionalProperties: false
+required:
+  - anyOfExample
