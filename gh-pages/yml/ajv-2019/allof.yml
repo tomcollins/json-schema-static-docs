@@ -6,9 +6,11 @@ type: object
 examples:
   - allOfExample:
       propertyA: With a string value
-  - allOfExample:
       propertyB: 123
-      propertyC: 456
+  - allOfExample:
+      propertyA: Another string value
+      propertyB: 456
+      propertyC: 789
 properties:
   allOfExample:
     title: All Of Example
@@ -20,6 +22,7 @@ properties:
           propertyA:
             type: string
             title: Property A
+        additionalProperties: false
         required:
           - propertyA
       - title: allOfExample option 1 with two properties
@@ -30,9 +33,9 @@ properties:
           propertyC:
             type: integer
             title: Property C
+        additionalProperties: false
         required:
           - propertyB
-          - propertyC
 additionalProperties: false
 required:
   - allOfExample

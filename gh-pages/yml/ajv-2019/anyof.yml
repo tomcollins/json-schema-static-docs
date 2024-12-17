@@ -7,8 +7,9 @@ examples:
   - anyOfExample:
       propertyA: With a string value
   - anyOfExample:
-      propertyB: 123
-      propertyC: 456
+      propertyA: With another string value
+      propertyB: 456
+      propertyC: 789
 properties:
   anyOfExample:
     title: Any Of Example
@@ -20,17 +21,34 @@ properties:
           propertyA:
             type: string
             title: Property A
+        additionalProperties: false
         required:
           - propertyA
-      - title: anyOfExample option 1 with two properties
+      - title: anyOfExample option 1 with a two property
         properties:
+          propertyA:
+            type: string
+            title: Property A
+          propertyB:
+            type: integer
+            title: Property B
+        additionalProperties: false
+        required:
+          - propertyA
+      - title: anyOfExample option 2 with three properties
+        properties:
+          propertyA:
+            type: string
+            title: Property A
           propertyB:
             type: integer
             title: Property B
           propertyC:
             type: integer
             title: Property C
+        additionalProperties: false
         required:
+          - propertyA
           - propertyB
           - propertyC
 additionalProperties: false
