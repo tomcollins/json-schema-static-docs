@@ -27,7 +27,7 @@
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "extend": "^3.0.2",
-    "fast-glob": "^3.3.1",
+    "fast-glob": "^3.3.3",
     "handlebars": "^4.7.7",
     "jsonpointer": "^5.0.1",
     "lodash": ">=4.17.21",
