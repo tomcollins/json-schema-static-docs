@@ -1,13 +1,13 @@
 ---
-title: Draft 2019-09 - Deprecated Example
-description: A schema demonstrating use of deprecated
+title: Draft 2020-12 - Prefix Items
+description: A schema demonstrating the use of prefixItems
 
 ---
 
 
-# Draft 2019-09 - Deprecated Example
+# Draft 2020-12 - Prefix Items
 
-<p>A schema demonstrating use of deprecated</p>
+<p>A schema demonstrating the use of prefixItems</p>
 
 <table>
 <tbody>
@@ -59,13 +59,11 @@ description: A schema demonstrating use of deprecated
   </tbody>
 </table>
 
+<hr />
 
+## Security
 
-
-
-
-
-
+<p>This schema is secure.</p>
 
 <hr />
 
@@ -74,8 +72,8 @@ description: A schema demonstrating use of deprecated
 {
     "$id": "https://example.com/2020-12-prefix-items.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Draft 2019-09 - Deprecated Example",
-    "description": "A schema demonstrating use of deprecated",
+    "title": "Draft 2020-12 - Prefix Items",
+    "description": "A schema demonstrating the use of prefixItems",
     "examples": [
         {
             "members": [
@@ -103,5 +101,3 @@ description: A schema demonstrating use of deprecated
     }
 }
 ```
-
-
