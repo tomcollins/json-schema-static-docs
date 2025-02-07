@@ -61,3 +61,11 @@ const JsonSchemaStaticDocs = require("json-schema-static-docs");
 ```
 
 All schema documents must use must use `draft-2020-12`, you can not combine this with earlier versions such as `draft-07`.
+
+### Secure Property
+
+To make a schema more secure, you can add a new property "secure" with a value of true. This property indicates that the schema has been reviewed and meets security standards.
+
+```yaml
+secure: true
+```

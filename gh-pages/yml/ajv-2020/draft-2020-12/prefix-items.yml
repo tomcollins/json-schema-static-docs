@@ -1,7 +1,7 @@
 "$id": https://example.com/2020-12-prefix-items.json
 "$schema": https://json-schema.org/draft/2020-12/schema
-title: Draft 2019-09 - Deprecated Example
-description: A schema demonstrating use of deprecated
+title: Draft 2020-12 - Prefix Items
+description: A schema demonstrating the use of prefixItems
 examples:
   - members:
       - 1
@@ -16,3 +16,4 @@ properties:
     minItems: 2
     maxItems: 2
     items: false
+secure: true
